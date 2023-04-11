@@ -1,0 +1,144 @@
+/* Allages pou ekana:
+
+- Diorthwsa ta fonts:
+    Ta eixes kanei import alla den ta xrisimopoiouses pouthena (px. font-family: Quicksand;). Episis ksana ekana
+    import to Quicksand ek neou gia na prosthesw kai osa font-weigths tha xreiastoume (kai liga extra gt 
+    fainontousan wraia kai tha apofasisoume logika stin poreia). To Muli den to vrika sta google fonts, mono sta
+    Adobe fonts, alla thewrisa pws eimaste ok me to Quicksand mono. Evala to font-family: 'Quicksand', sans-serif;
+    (to opoio proteinei etsi h Google) sto * wste na to exei oli h selida, kai na allazoume monaxa to font-weight.
+
+- Prosarmosa to logo:
+    font-size kai margin pros to paron.
+
+- Prosarmosa ta items:
+    Evala ena transition gia na fainetai pio wraia h allagi tou xrwmatos. Epishs allaksa to mergin-left, evala to
+    teleytaio na grafei "log in" sketo (kai meta stin selida pou tha anoigei mporoume na kanoume implement kai to
+    sign in), kai evala text-transform: capitalize; gia na vazei aytomata se kefalaia ola ta arxika grammata.
+
+- Allaksa merika xrwmata:
+    H megaliterh diafora einai pws to hover twn about/contact/login to ekana cyan opws kai to ypoloipo theme.
+    Pistevw einai kalytero na parameinoume sta dyo/tria xrwmata. Argotera pou tha apofasisoume merika tha ta valw
+    kai ws global metavlites. Alles mikres allages se xrwmata gia na einai pio apala sto mati, opws kai to
+    background olhs ths selidas den to afisa teleiws aspro alla exei kai ena mikro ixnos kyanou gia na tairiazei
+    kalytera me ta ypoloipa xrwmata kai na min se tyflwnei.
+
+- Eftiaksa Custom Scrollbar
+
+- Kai kati alla pou den sygkratisa
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 27, 27);
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(238, 255, 255);
+}
+
+body{
+    height: 1000px;
+}
+
+
+
+/*------------------ Custom Scrollbar ------------------*/
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 133, 133);
+}
+
+
+
+/*------------------ Navbar/Header ------------------*/
+
+nav{
+    padding: 10px 40px 10px 70px;
+    border: 1px solid cyan;
+    box-shadow: 0px 10px 40px   #888888;
+    border-left: none;
+    border-right: none;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li.logo{
+    flex: 1;
+    color: rgb(0, 133, 133);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0px  15px -40px;
+}
+
+nav ul div.items{
+    padding: 0 25px;
+    display: inline-flex;
+    font-weight: 500;
+    margin-right: -40px;
+    text-transform: capitalize;
+}
+
+nav ul div.items a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 12px;
+    transition: color 0.3s ease-in;
+}
+nav ul div.items a:hover{
+    color: rgb(0, 255, 255);
+    transition: color 0.3s ease-out;
+}
+
+nav ul .search-icon{
+    height: 40px;
+    width: 340px;
+    display: flex;
+}
+
+nav ul .search-icon input{
+    height: auto;
+    width: 300px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 50px 0 0 50px;
+    background-color: rgb(225, 241, 241);
+}
+
+nav ul .search-icon .icon{
+    height: 100%;
+    width: 40px;
+    padding-right: 15px;
+    line-height: 40px;
+    text-align: center;
+    background: rgb(225, 241, 241);
+    border-radius: 0 50px 50px 0;
+}
+
+nav ul .search-icon .icon:hover{
+    cursor: pointer;
+}
+
+nav ul .search-icon .icon i{
+    background-color: transparent;
+    font-size: 18px;
+}
