@@ -37,10 +37,12 @@
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     background-color: rgb(238, 255, 255);
+    
 }
 
 body{
     height: 1000px;
+    background: linear-gradient(50deg, rgb(238,255,255) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, rgb(238,255,255) 75%);
 }
 
 
@@ -141,4 +143,46 @@ nav ul .search-icon .icon:hover{
 nav ul .search-icon .icon i{
     background-color: transparent;
     font-size: 18px;
+}
+
+
+
+/*------------------ Home Page ------------------*/
+
+.home,
+.home-popular,
+.home-header,
+.home-popular h3{
+    background-color: transparent;
+    width: fit-content;
+}
+
+
+h1{
+    background-color: inherit;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-popular{
+    padding: 150px 250px 150px 200px;
+}
+
+.home-popular h3{
+    text-transform: capitalize;
+    margin: auto;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.home-header{
+    padding: 265px 200px 150px 300px;
+    text-align: center;
+}
+
+.home-header h1{
+    font-size: 80px;
 }

@@ -3,12 +3,25 @@
     <head>
         <meta charset="utf-8">
         <title>easyCourse</title>
-        <link rel="stylesheet" href="/css/styling.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Our CSS -->
+        <link rel="stylesheet" href="css/styling.css">
+        <link rel="stylesheet" href="css/carousel.css">
+        
+        <!-- CSS for FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+        <!-- Our JS -->
+        <script src="js/script.js"></script>
+        <script src="js/carousel.js"></script>
+        
+
     </head>
     <body>
+
+        <!---------------------- Navbar Start ---------------------->
+
         <nav>
             <ul>
                 <li class="logo">easyCourse</li>
@@ -26,6 +39,77 @@
             </ul>
 
         </nav>
+
+        <!---------------------- Navbar End ---------------------->
+
+
+<!--
+
+Landscape & Wildlife Photography (Φωτογράφηση Τοπίου & Άγριας Ζωής) // ΤΜΗΜΑ ΔΑΣΟΛΟΓΙΑΣ ΚΑΙ ΦΥΣΙΚΟΥ ΠΕΡΙΒΑΛΛΟΝΤΟΣ 
+INTRODUCTION TO MARKETING  (ΕΙΣΑΓΩΓΗ ΣΤΟ ΜΑΡΚΕΤΙΝΓΚ) // ΤΜΗΜΑ ΕΜΠΟΡΙΑΣ ΚΑΙ ΔΙΑΦΗΜΙΣΗΣ 
+INTRODUCTION TO DATA ANALYTICS  (Εισαγωγή στην Αναλυτική των Δεδομένων) // ΤΜΗΜΑ ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΗΛΕΚΤΡΟΝΙΚΩΝ ΣΥΣΤΗΜΑΤΩΝ 
+BIOMEDICAL TECHNOLOGY  (Βιοϊατρική Τεχνολογία) // ΤΜΗΜΑ ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΗΛΕΚΤΡΟΝΙΚΩΝ ΣΥΣΤΗΜΑΤΩΝ 
+Internal Medicine I  (ΝΟΣΟΛΟΓΙΑ Ι) // ΤΜΗΜΑ ΝΟΣΗΛΕΥΤΙΚΗΣ 
+
+-->
+
+
+        <!---------------------- Home Start ---------------------->
+
+
+        
+          
+
+
+        <div class="home">
+            
+            <div class="home-popular">
+                <h3>popular courses</h3>
+
+                <div class="slider">
+                    <div class="slider-prev"></div>
+                    
+                    <ul>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="landscape photography picture">
+                        </li>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="marketing picture">
+                        </li>
+
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1579226905180-636b76d96082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="data analysis picture">
+                        </li>
+
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1578496479531-32e296d5c6e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="biomedical technologies picture">
+                        </li>
+
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="internal medicine picture">
+                        </li>
+                    </ul>
+
+                    <div class="slider-next"></div>
+                </div>
+
+                <div class="description">
+                    <h3 data-index="0">landscape & wildlife photography</h3>
+                    <h3 data-index="1">introduction to marketing</h3>
+                    <h3 data-index="2" class="active">introduction to data analytics</h3>
+                    <h3 data-index="3">biomedical technology</h3>
+                    <h3 data-index="4">internal medicine i</h3>
+                </div>
+                
+            </div>
+
+            <div class="home-header">
+                <h1>Let us teach you the skills</h1>
+            </div>
+            
+        </div>
+
+        <!---------------------- Home End ---------------------->
 
     </body>
 </html>
