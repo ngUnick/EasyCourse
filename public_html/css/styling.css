@@ -1,31 +1,5 @@
 /* Allages pou ekana:
 
-- Diorthwsa ta fonts:
-    Ta eixes kanei import alla den ta xrisimopoiouses pouthena (px. font-family: Quicksand;). Episis ksana ekana
-    import to Quicksand ek neou gia na prosthesw kai osa font-weigths tha xreiastoume (kai liga extra gt 
-    fainontousan wraia kai tha apofasisoume logika stin poreia). To Muli den to vrika sta google fonts, mono sta
-    Adobe fonts, alla thewrisa pws eimaste ok me to Quicksand mono. Evala to font-family: 'Quicksand', sans-serif;
-    (to opoio proteinei etsi h Google) sto * wste na to exei oli h selida, kai na allazoume monaxa to font-weight.
-
-- Prosarmosa to logo:
-    font-size kai margin pros to paron.
-
-- Prosarmosa ta items:
-    Evala ena transition gia na fainetai pio wraia h allagi tou xrwmatos. Epishs allaksa to mergin-left, evala to
-    teleytaio na grafei "log in" sketo (kai meta stin selida pou tha anoigei mporoume na kanoume implement kai to
-    sign in), kai evala text-transform: capitalize; gia na vazei aytomata se kefalaia ola ta arxika grammata.
-
-- Allaksa merika xrwmata:
-    H megaliterh diafora einai pws to hover twn about/contact/login to ekana cyan opws kai to ypoloipo theme.
-    Pistevw einai kalytero na parameinoume sta dyo/tria xrwmata. Argotera pou tha apofasisoume merika tha ta valw
-    kai ws global metavlites. Alles mikres allages se xrwmata gia na einai pio apala sto mati, opws kai to
-    background olhs ths selidas den to afisa teleiws aspro alla exei kai ena mikro ixnos kyanou gia na tairiazei
-    kalytera me ta ypoloipa xrwmata kai na min se tyflwnei.
-
-- Eftiaksa Custom Scrollbar
-
-- Kai kati alla pou den sygkratisa
-
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
@@ -41,7 +15,7 @@
 }
 
 body{
-    height: 1000px;
+    height: 2500px;
     background: linear-gradient(50deg, rgb(238,255,255) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, rgb(238,255,255) 75%);
 }
 
@@ -71,6 +45,11 @@ nav{
     box-shadow: 0px 10px 40px   #888888;
     border-left: none;
     border-right: none;
+    
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
 }
 
 nav ul{
