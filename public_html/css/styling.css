@@ -48,8 +48,8 @@ nav{
     
     width: 100%;
     position: fixed;
-    top: 0%;
-    left: 0%;
+    /* top: 0%;
+    left: 0%; */
 }
 
 nav ul{
@@ -147,7 +147,7 @@ h1{
 }
 
 .home-popular{
-    padding: 150px 250px 150px 200px;
+    padding: 20vh 8vw 15vh 3vw;
 }
 
 .home-popular h3{
@@ -158,8 +158,22 @@ h1{
 }
 
 .home-header{
-    padding: 265px 200px 150px 300px;
+    padding: 30vh 13vw 15vh 3vw;
     text-align: center;
+    text-transform: capitalize;
+
+
+    /*--Divide Text Into 3 Lines--*/
+    display: -webkit-box; /* Set the display property to -webkit-box to enable old WebKit syntax */
+    -webkit-box-orient: vertical; /* Set the box-orient property to vertical to make sure the content is arranged vertically */
+    /* overflow: hidden; Hide any text that overflows the block */
+    text-overflow: ellipsis; /* Add an ellipsis at the end of the last visible line */
+    -webkit-line-clamp: 3; /* Set the maximum number of lines to three */
+    /* The above line is the shorthand version of the following three properties:
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box; */
+      
 }
 
 .home-header h1{

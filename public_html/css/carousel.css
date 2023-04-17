@@ -9,6 +9,7 @@ li,
   display: flex;
   flex-direction: row;
   gap: 10px;
+  width: 1000px;
 }
 
 ul{
@@ -20,10 +21,14 @@ ul{
 
 li{
   width: fit-content;
+  height: fit-content;
 }
 
 li img{
   height: 150px;
+  border-radius: 5% / 3%;
+  border: 1px solid rgb(238, 255, 255);
+  position: relative;
 }
 
 .slider-prev,
@@ -34,11 +39,21 @@ li img{
   margin: auto;
   cursor: pointer;
   font-weight: 600;
+  
+}
+
+.slider-prev{
+  transform: translateX(100px);
+}
+
+.slider-next{
+  transform: translateX(-100px);
 }
 
 .slider-prev::before{
   content: '<';
   margin-right: 15px;
+  
 }
 
 .slider-next::before{
@@ -55,6 +70,12 @@ li img{
   display: none;
 }
 
-.active{
+h3.active{
   display: block !important;
 }
+
+/* img.active{
+  height: 300px;
+  transform: 'translateX(' + (-4 * 100) + 'px)';
+  z-index: 20;
+} */
