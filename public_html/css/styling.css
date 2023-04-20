@@ -1,0 +1,271 @@
+/* Allages pou ekana:
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 27, 27);
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    color: #333;
+}
+
+body{
+    height: 2500px;
+    background: linear-gradient(50deg, rgb(238,255,255) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, rgb(238,255,255) 75%);
+}
+
+
+
+/*------------------ Custom Scrollbar ------------------*/
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 133, 133);
+}
+
+
+
+/*------------------ Navbar/Header ------------------*/
+
+nav{
+    padding: 10px 40px 10px 70px;
+    border: 1px solid cyan;
+    box-shadow: 0px 10px 40px   #888888;
+    border-left: none;
+    border-right: none;
+    background-color: rgb(238, 255, 255);
+    
+    width: 100%;
+    position: fixed;
+    /* top: 0%;
+    left: 0%; */
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li.logo{
+    flex: 1;
+    color: rgb(0, 133, 133);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0px  15px -40px;
+    text-transform: none;
+}
+
+nav ul div.items{
+    padding: 0 25px;
+    display: inline-flex;
+    font-weight: 500;
+    margin-right: -40px;
+    text-transform: capitalize;
+}
+
+nav ul div.items a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 12px;
+    transition: color 0.3s ease-in;
+}
+nav ul div.items a:hover{
+    color: rgb(0, 255, 255);
+    transition: color 0.3s ease-out;
+}
+
+nav ul .search-icon{
+    height: 40px;
+    width: 340px;
+    display: flex;
+}
+
+nav ul .search-icon input{
+    height: auto;
+    width: 300px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 50px 0 0 50px;
+    background-color: rgb(225, 241, 241);
+}
+
+nav ul .search-icon .icon{
+    height: 100%;
+    width: 40px;
+    padding-right: 15px;
+    line-height: 40px;
+    text-align: center;
+    background: rgb(225, 241, 241);
+    border-radius: 0 50px 50px 0;
+}
+
+nav ul .search-icon .icon:hover{
+    cursor: pointer;
+}
+
+nav ul .search-icon .icon i{
+    font-size: 18px;
+}
+
+
+
+/*------------------ Home Page ------------------*/
+
+nav ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color:  rgb(255, 255, 255);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px  rgb(255, 255, 255);
+    padding: 12px 16px;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+
+.dropdown-content li {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-content li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dropdown-content li a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown-content li a:hover {
+    color:  white;
+    background-color:  rgb(255, 255, 255);
+  }
+
+  .fas{
+    margin-right: 10px;
+  }
+
+  .dropdown-menu:hover .dropdown-submenu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+
+
+/*------------------ Home Page ------------------*/
+
+.home,
+.home-popular,
+.home-header,
+.home-popular h3{
+    width: fit-content;
+}
+
+
+h1{
+    background-color: inherit;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-popular{
+    padding: 20vh 8vw 15vh 3vw;
+}
+
+.home-popular h3{
+    text-transform: capitalize;
+    margin: auto;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.home-header{
+    padding: 30vh 13vw 15vh 3vw;
+    text-align: center;
+    text-transform: capitalize;
+
+
+    /*--Divide Text Into 3 Lines--*/
+    display: -webkit-box; /* Set the display property to -webkit-box to enable old WebKit syntax */
+    -webkit-box-orient: vertical; /* Set the box-orient property to vertical to make sure the content is arranged vertically */
+    /* overflow: hidden; Hide any text that overflows the block */
+    text-overflow: ellipsis; /* Add an ellipsis at the end of the last visible line */
+    -webkit-line-clamp: 3; /* Set the maximum number of lines to three */
+    /* The above line is the shorthand version of the following three properties:
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box; */
+      
+}
+
+.home-header h1{
+    font-size: 80px;
+}
+
+/*-----------------------------page continue-------------------------*/
+
+#features{
+    padding: 5px 10px 0 10px;
+    text-align: center;
+}
+
+#features .fea-base{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+
+}
+
+#features .fea-box{
+    background: rgb(247, 236, 236) ;
+    text-align: start;
+}
+
+#features .fea-box i{
+    font-size: 2.5rem;
+    color: rgb(75, 72, 72) ;
+    text-align: center;
+   
+}
+
+#features .fea-box h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(75, 72, 72) ;
+    padding: 13px 0 7px 0;
+}
+
+#features .fea-box p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(75, 72, 72) ;
+}
