@@ -10,8 +10,6 @@
     color: rgb(0, 27, 27);
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(238, 255, 255);
-    
 }
 
 body{
@@ -45,6 +43,7 @@ nav{
     box-shadow: 0px 10px 40px   #888888;
     border-left: none;
     border-right: none;
+    background-color: rgb(238, 255, 255);
     
     width: 100%;
     position: fixed;
@@ -120,7 +119,6 @@ nav ul .search-icon .icon:hover{
 }
 
 nav ul .search-icon .icon i{
-    background-color: transparent;
     font-size: 18px;
 }
 
@@ -183,7 +181,6 @@ nav ul .dropdown:hover .dropdown-content {
 .home-popular,
 .home-header,
 .home-popular h3{
-    background-color: transparent;
     width: fit-content;
 }
 
