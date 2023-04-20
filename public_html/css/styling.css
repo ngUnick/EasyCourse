@@ -230,3 +230,42 @@ h1{
 .home-header h1{
     font-size: 80px;
 }
+
+/*-----------------------------page continue-------------------------*/
+
+#features{
+    padding: 5px 10px 0 10px;
+    text-align: center;
+}
+
+#features .fea-base{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+
+}
+
+#features .fea-box{
+    background: rgb(247, 236, 236) ;
+    text-align: start;
+}
+
+#features .fea-box i{
+    font-size: 2.5rem;
+    color: rgb(75, 72, 72) ;
+    text-align: center;
+   
+}
+
+#features .fea-box h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(75, 72, 72) ;
+    padding: 13px 0 7px 0;
+}
+
+#features .fea-box p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(75, 72, 72) ;
+}
