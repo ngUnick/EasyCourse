@@ -10,6 +10,8 @@
     color: rgb(0, 27, 27);
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    color: #333;
 }
 
 body{
@@ -65,6 +67,7 @@ nav ul li.logo{
     font-size: 30px;
     font-weight: 700;
     margin: 10px 0px  15px -40px;
+    text-transform: none;
 }
 
 nav ul div.items{
