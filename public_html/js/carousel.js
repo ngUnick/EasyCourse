@@ -11,46 +11,46 @@ window.addEventListener('load', () => {
 
 
 function setImgAttributes(images, slideWidth){
-    for (let i = 0; i < images.length; i++) {
-        const image = images[i];
-    
-        // Apply unique attributes to each image based on its position and class
-        if (i === 0) {
-    
-            image.style.height = '200px';
-            image.style.transform = 'translateX(' + (slideWidth * 1.2) + 'px)';
-            image.style.marginTop = '50px';
-            image.style.zIndex = 1;
-    
-        } else if (i === 1) {
-    
-            image.style.height = '250px';
-            image.style.transform = 'translateX(' + (slideWidth * 0.7) + 'px)';
-            image.style.marginTop = '25px';
-            image.style.zIndex = 10;
-    
-        } else if (image.classList.contains('active')) {
-
+    for (const [position,image] of images.entries() ) {
+     
+        if (image.classList.contains('active')) {
             image.style.height = '300px';
             image.style.transform = 'translateX(0px)';
             image.style.zIndex = '20';
-
-        } else if (i === 3) {
-    
-            image.style.height = '250px';
-            image.style.transform = 'translateX(' + (-slideWidth * 0.7) + 'px)';
-            image.style.marginTop = '25px';
-            image.style.zIndex = 10;
-    
-        } else if (i === 4) {
-    
-            image.style.height = '200px';
-            image.style.transform = 'translateX(' + (-slideWidth * 1.2) + 'px)';
-            image.style.marginTop = '50px';
-            image.style.zIndex = 1;
-    
+            continue;
         }
-        }
+        switch(position){
+            // Apply unique attributes to each image based on its position and class
+           case 0:
+        
+                image.style.height = '200px';
+                image.style.transform = 'translateX(' + (slideWidth * 1.2) + 'px)';
+                image.style.marginTop = '50px';
+                image.style.zIndex = 1;
+                break;
+        
+          case 1:
+                image.style.height = '250px';
+                image.style.transform = 'translateX(' + (slideWidth * 0.7) + 'px)';
+                image.style.marginTop = '25px';
+                image.style.zIndex = 10;
+                break;
+        
+          case 3:
+                image.style.height = '250px';
+                image.style.transform = 'translateX(' + (-slideWidth * 0.7) + 'px)';
+                image.style.marginTop = '25px';
+                image.style.zIndex = 10;
+                break;
+        
+          case 4 :
+                image.style.height = '200px';
+                image.style.transform = 'translateX(' + (-slideWidth * 1.2) + 'px)';
+                image.style.marginTop = '50px';
+                image.style.zIndex = 1;
+                break;
+       }
+    }
 }
 
 // Toggle Slider ----------------------------
