@@ -294,21 +294,29 @@ h1{
 .home-about .image{     
     flex: 1 1 1px;
     padding: 100px;
+    
+    
 }
 
 .home-about .image img{
     width: 80%;
-    border-radius: 70px;
+    border-radius: 70px ;
+    border: 2px solid white;
 }
 
-.home-about .content{
+.home-about .content{   /* ---------na einai img/content pio enomena. to border to evale gia na vlepoume ean metakineitai -----------*/
     flex:1 1 0.5px;
     font-size: 22px;
     transition: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 20px 20px;
     line-height: 2.5;
     color: black;
+    border: 2px solid white;
+    border-radius: 70px;
+    margin-left: 80px;
+
+
 
     
 }
