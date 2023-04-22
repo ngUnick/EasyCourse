@@ -269,3 +269,16 @@ h1{
     font-weight: 400;
     color: rgb(75, 72, 72) ;
 }
+
+
+/* courses page2 */
+
+.more-courses{
+    padding: 50px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.more-courses .course-img{
+    border-radius: 20px;
+}
