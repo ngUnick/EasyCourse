@@ -16,21 +16,50 @@
     <br>
     <input type="date"  id="dt">
     <button type="button" onclick="SearchDate()">search date</button>
+    <br>
+    <div id="MainFrame">
+
+    </div>
 </body>
 <script>
 
 const TextInputElement = document.getElementById("txt")
 const DateInputElement = document.getElementById("dt");
+const MainFrame = document.getElementById('MainFrame')
 
 GetDate = () => new Date(Date.parse(DateInputElement.value));
 
 SearchDate = ()=>
-{
+{//not implemented
   console.log(GetDate())
 }
 SearchTxt = ()=>
-{
+{//not implemented
   console.log(TextInputElement.value)
 }
+
+RequestResource = (resource) =>
+{//not implemented
+  console.log(resource)
+}
+
+FetchResults = SearchResults =>
+{
+   for( const Hit of SearchResults)
+   {
+     const Div  = document.createElement('div')
+     Div.classList.add('container')
+     
+     const Href = document.createElement('div')
+     Href.classList.add('clickable')
+     Href.innerText = Hit.Fname;
+     Href.setAttribute('data-id', Hit.PrimaryKey )
+     Href.addEventListener('click', event => RequestResource(event))
+   
+     Div.appendChild(Href)
+     MainFrame.appendChild(Div);
+   }
+}
+
 </script>
 </html>
