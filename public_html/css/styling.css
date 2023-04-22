@@ -282,3 +282,61 @@ h1{
 .more-courses .course-img{
     border-radius: 20px;
 }
+
+/*-- about us , continue page1 */
+
+.home-about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-about .image{     
+    flex: 1 1 1px;
+    padding: 100px;
+}
+
+.home-about .image img{
+    width: 80%;
+    border-radius: 70px;
+}
+
+.home-about .content{
+    flex:1 1 0.5px;
+    font-size: 22px;
+    transition: 100%;
+    text-align: center;
+    padding: 20px;
+    line-height: 2.5;
+    color: black;
+
+    
+}
+.home-about .content h3{
+   text-align: center;
+   font-size: 40px;
+   color:black;
+}
+
+
+
+.home-about .btn{            /* to btn na paei ligo pio katw apo to keimeno, kai na pare to xrwma tou backgroung. me to trasmition den to phre */
+    font-size: 20px;
+    border: 2px;
+                                transition: 100%;
+    padding: 15px 32px;
+    display: inline-block;
+    border-radius: 20px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    background-color: rgb(60, 243, 237) 90%;
+    color: black;
+    border: 2px solid black;
+    
+}
+
+.home-about .btn:hover{
+    background-color: rgb(0, 0, 0);
+    color:rgb(225, 241, 241);
+    border-radius: 20px solid black;
+}
