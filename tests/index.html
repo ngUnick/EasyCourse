@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="txt">Give Text</label>
+    <input type="text"  id="txt">
+    <button type="button" onclick="SearchTxt()">search text</button>
+    <br>
+    <br>
+    <label for="dt">Give Date</label>
+    <br>
+    <input type="date"  id="dt">
+    <button type="button" onclick="SearchDate()">search date</button>
+</body>
+<script>
+
+const TextInputElement = document.getElementById("txt")
+const DateInputElement = document.getElementById("dt");
+
+GetDate = () => new Date(Date.parse(DateInputElement.value));
+
+SearchDate = ()=>
+{
+  console.log(GetDate())
+}
+SearchTxt = ()=>
+{
+  console.log(TextInputElement.value)
+}
+</script>
+</html>
