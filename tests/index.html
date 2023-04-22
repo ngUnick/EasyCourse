@@ -52,8 +52,8 @@ FetchResults = SearchResults =>
      
      const Href = document.createElement('div')
      Href.classList.add('clickable')
-     Href.innerText = Hit.Fname;
-     Href.setAttribute('data-id', Hit.PrimaryKey )
+     Href.innerText = Hit.Fname
+     Href.dataset.Fid = Hit.PrimaryKey
      Href.addEventListener('click', event => RequestResource(event))
    
      Div.appendChild(Href)
