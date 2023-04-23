@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <label for="txt">Give Text</label>
@@ -27,23 +28,39 @@ const TextInputElement = document.getElementById("txt")
 const DateInputElement = document.getElementById("dt");
 const MainFrame = document.getElementById('MainFrame')
 
-GetDate = () => new Date(Date.parse(DateInputElement.value));
+const GetDate = () => new Date(Date.parse(DateInputElement.value));
 
-SearchDate = ()=>
-{//not implemented
-  console.log(GetDate())
-}
-SearchTxt = ()=>
-{//not implemented
-  console.log(TextInputElement.value)
+const SendHttpRequest =  QueryContent =>
+{
+  $.ajax(
+    {
+      url:'',
+      type:'GET',
+      contentType:'application/json',
+        dataType:'json',
+        data: { query : QueryContent },//, order_by : sort , rescount : rescount },
+        cache:false,
+        headers:{
+            'accept':'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Headers':'*'
+        },
+        success:FetchResults,
+        error:stderr 
+    }
+  );
 }
 
-RequestResource = (resource) =>
+const SearchTxt = () => SendHttpRequest(TextInputElement.value);
+ 
+const SearchDate = () => SendHttpRequest(GetDate());
+
+const RequestResource = (resource) =>
 {//not implemented
   console.log(resource)
 }
 
-FetchResults = SearchResults =>
+const FetchResults = SearchResults =>
 {
    for( const Hit of SearchResults)
    {
