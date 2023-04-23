@@ -46,7 +46,7 @@ const SendHttpRequest =  QueryContent =>
             'Access-Control-Allow-Headers':'*'
         },
         success:FetchResults,
-        error:stderr 
+        error:PrintErr 
     }
   );
 }
@@ -77,6 +77,8 @@ const FetchResults = SearchResults =>
      MainFrame.appendChild(Div);
    }
 }
+
+const PrintErr = (data , y , z ,c ) => alert( data.responseJSON.errormesg );
 
 </script>
 </html>
