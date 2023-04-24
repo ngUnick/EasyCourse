@@ -271,21 +271,120 @@ h1{
 }
 
 
-/* courses page2 */
+/* ------------------------courses page2 --------------------------*/
 
-.more-courses{
-    padding: 50px 0px;
+
+  .heading {
+    margin-top: -60px;
+    margin-left: 650px;
+  }
+
+
+
+  .packages {
+    padding: 50px 0;
     display: flex;
-    justify-content: space-around;
-}
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-.more-courses .course-img{
-    border-radius: 20px;
-}
+  .box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 650px;
+  }
+
+  .box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 5%;
+    width: 40%;
+    height: 40%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .box:hover {
+    transform: translateY(-10px);
+  }
+
+  .box .image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .box .content {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .box .content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .box .content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .box .content .course-time {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+
+  .box .content .price {
+    font-size: 24px;
+    color: #008080;
+    margin-bottom: 10px;
+  }
+
+  .box .content .btn {
+    display: inline-block;
+    background-color: #008080;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .box .content .btn:hover {
+    background-color:#333;
+  }
+
+  .professor-name {
+    font-size: bold;
+    font-size: 17px;
+  }
+
+
+
 
 /*-- about us , continue page1 */
 
-.home-about{
+.home-about {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
