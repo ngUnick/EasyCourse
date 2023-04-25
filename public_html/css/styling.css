@@ -279,7 +279,8 @@ h1{
 
 
 
-/* ------------filter menu END----------*/
+/* -------------------filter menu END----------*/
+
 
 
 /* ------------filter buttons START----------*/
@@ -294,7 +295,7 @@ h1{
   color: #666;
   border:  2px solid rgb(0, 255, 255);
   border-radius: 10px;
-  background-color: white;
+  background-color: rgb(238, 255, 255)ite;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-size: 24px;
   padding: 8px 32px 8px 16px;  
@@ -307,7 +308,8 @@ h1{
 }
 
 .button:hover {
-  border-color: cyan;
+  background-color: rgb(178, 240, 240);
+  color: black;
 }
 
 .button .remove-icon {
@@ -357,7 +359,7 @@ h1{
   }
 
   .box {
-    background-color: #fff;
+    background-color:  rgb(238, 255, 255);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 0 5%;
@@ -427,6 +429,7 @@ h1{
   .professor-name {
     font-size: bold;
     font-size: 17px;
+    cursor: pointer;
   }
 
 /* ------------courses result END----------*/
