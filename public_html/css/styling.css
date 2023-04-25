@@ -271,15 +271,65 @@ h1{
 }
 
 
-/* ------------------------courses page2 --------------------------*/
+/* ---------------------------------courses page2 -----------------------------------*/
 
 
-  .heading {
-    margin-top: -60px;
-    margin-left: 650px;
-  }
+/*--------------------filter menu-------------*/
 
 
+
+
+/* ------------filter menu END----------*/
+
+
+/* ------------filter buttons START----------*/
+
+.button-group {
+  display: flex;
+  margin-left: 28%;
+  margin-top: -100px;
+}
+
+.button {
+  color: #666;
+  border:  2px solid rgb(0, 255, 255);
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  padding: 8px 32px 8px 16px;  
+  cursor: pointer;
+  width: 280px;
+  height: 70px;
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.button:hover {
+  border-color: cyan;
+}
+
+.button .remove-icon {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+}
+
+.button .remove-icon:hover {
+  color: rgb(0, 255, 255);
+  transition: color 0.1s ease-in;
+}
+
+/* ------------filter buttons END----------*/
+
+
+/* ------------courses result START----------*/
 
   .packages {
     padding: 50px 0;
@@ -379,10 +429,13 @@ h1{
     font-size: 17px;
   }
 
+/* ------------courses result END----------*/
 
 
 
-/*-- about us , continue page1 */
+
+
+/*-------------- about us , continue page1 ----------------*/
 
 .home-about {
     display: flex;
