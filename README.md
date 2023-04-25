@@ -9,6 +9,8 @@ Third Meeting 20/03/2023: Σηζητηση σχετικα με την Σχεδι
 Welcome to the ADOPSE_2023_Omada2 wiki!
 
 # Roles
+#https://docs.google.com/spreadsheets/d/1Otu6uRoyLc6QRkMfk5WKrsXkQYk_9mJ18PvSHTdXnw8/edit?usp=sharing
+
 ## Project Manager:
 -Σιαματρας Βασιλειος 185273<br>
 
