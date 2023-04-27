@@ -231,11 +231,12 @@ h1{
     font-size: 80px;
 }
 
-/*-----------------------------page continue-------------------------*/
+/*---page1 easyCourse Feautures----------DEN emfanizete opws prepei, sou eixa steile mia eikona sto discord gia to pws einai. to vlepoume na doume ti fteei!----------------------*/
 
 #features{
     padding: 5px 10px 0 10px;
     text-align: center;
+    background-color: #9fb9b9;
 }
 
 #features .fea-base{
@@ -245,8 +246,8 @@ h1{
 
 }
 
-#features .fea-box{
-    background: rgb(247, 236, 236) ;
+#features .fea-box {                     
+    background: rgb(247, 236, 236);
     text-align: start;
 }
 
@@ -269,6 +270,78 @@ h1{
     font-weight: 400;
     color: rgb(75, 72, 72) ;
 }
+
+/*-------------- about us , continue page1 ----------------*/
+
+.home-about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #c6e9e9;
+}
+
+.home-about .image{     
+  flex: 1 1 1px;
+  padding: 100px;
+  
+  
+}
+
+.home-about .image img{
+  width: 100%;
+  border-radius: 30px ;
+  border: 2px solid white;
+}
+
+.home-about .content{   /* ---------na einai img/content pio enomena. to border to evale gia na vlepoume ean metakineitai -----------*/
+  flex:1 1 0.5px;
+  font-size: 18px;
+  transition: 100%;
+  text-align: center;
+  padding: 20px 20px;
+  line-height: 2.5;
+  color: black;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin-left: 80px;
+
+
+
+  
+}
+.home-about .content h3{
+ text-align: center;
+ font-size: 40px;
+ color:black;
+}
+
+
+
+.home-about .btn{            /* to btn na paei ligo pio katw apo to keimeno, kai na pare to xrwma tou backgroung. me to trasmition den to phre */
+  font-size: 20px;
+  border: 2px;
+                              transition: 100%;
+  padding: 15px 32px;
+  display: inline-block;
+  border-radius: 20px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  background-color: rgb(60, 243, 237) 90%;
+  color: black;
+  border: 2px solid black;
+  
+}
+
+.home-about .btn:hover{
+  background-color: rgb(0, 0, 0);
+  color:rgb(225, 241, 241);
+  border-radius: 20px solid black;
+}
+
+
+
+
+
 
 
 /* ---------------------------------courses page2 -----------------------------------*/
@@ -444,6 +517,7 @@ h1{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #c6e9e9;
 }
 
 .home-about .image{     
@@ -454,21 +528,21 @@ h1{
 }
 
 .home-about .image img{
-    width: 80%;
-    border-radius: 70px ;
+    width: 100%;
+    border-radius: 30px ;
     border: 2px solid white;
 }
 
 .home-about .content{   /* ---------na einai img/content pio enomena. to border to evale gia na vlepoume ean metakineitai -----------*/
     flex:1 1 0.5px;
-    font-size: 22px;
+    font-size: 18px;
     transition: 100%;
     text-align: center;
     padding: 20px 20px;
     line-height: 2.5;
     color: black;
     border: 2px solid white;
-    border-radius: 70px;
+    border-radius: 30px;
     margin-left: 80px;
 
 
