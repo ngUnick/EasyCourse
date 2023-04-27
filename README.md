@@ -1,9 +1,6 @@
 # ADOPSE_2023_Omada2
 
 
-# Roles
-#https://docs.google.com/spreadsheets/d/1Otu6uRoyLc6QRkMfk5WKrsXkQYk_9mJ18PvSHTdXnw8/edit?usp=sharing
-
 ## Project Manager:
 -Σιαματρας Βασιλειος 185273<br>
 
