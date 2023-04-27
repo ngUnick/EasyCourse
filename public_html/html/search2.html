@@ -77,46 +77,7 @@
       
       
         <div class="box-container">
-          <div class="box">
-            <div class="image">
-              <img src="../files/img1.jpg" alt="">   <!--gia na exoume imgs tha borousame na exoume mia vash (gia arxh apo 10 katigories) me 10 eikones 
-                                            h kathemia kai na travaei apo ekei tixaia. as poume edw eimai sto medical kai me exei 3 imgs apo medical-->
-            </div>
-            <div class="content">
-              <h3>Medical</h3>
-              <p>All about knee injuries in 8 full courses packet.</p>
-              <div class="professor-name"><a href="#"></a> Banos S.</div>
-              <div class="course-time">7hours 30 minutes</div>
-              <div class="price">$250</div>
-              <a href="#" class="btn">Buy now</a>
-            </div>
-          </div>
-          <div class="box">
-            <div class="image">
-              <img src="../files/img2.jpg" alt="">
-            </div>
-            <div class="content">
-              <h3>Medical</h3>
-              <p>All about knee injuries in 8 full courses packet.</p>
-              <div class="professor-name">Banos S.</div>
-              <div class="course-time">7hours 30 minutes</div>
-              <div class="price">$250</div>
-              <a href="#" class="btn">Buy now</a>
-            </div>
-          </div>
-          <div class="box">
-            <div class="image">
-              <img src="../files/img3.jpg" alt="">
-            </div>
-            <div class="content">
-              <h3>Medical</h3>
-              <p>All about knee injuries in 8 full courses packet.</p>
-              <div class="professor-name">Banos S.</div>
-              <div class="course-time">7hours 30 minutes</div>
-              <div class="price">$250</div>
-              <a href="#" class="btn">Buy now</a>
-            </div>
-          </div>
+          
         </div>
         
       
@@ -124,5 +85,93 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+
+  const BoxContainer = document.getElementsByClassName('box-container')[0]
+
+  const FakeData = 
+  [
+  {
+    ImageUrl : '../files/img1.jpg' ,
+    Description:"All about knee injuries in 8 full courses packet." ,
+    ProfessorName:"Thug shaker",
+    Header :'Medical' ,
+    Price :'$250' ,
+    CourseTime: "7 hours 30 minutes",
+
+  },
+  {
+    ImageUrl : "../files/img2.jpg",
+    Description:"All about knee injuries in 8 full courses packet." ,
+    ProfessorName:"Goulianas",
+    Header :'Medical' ,
+    Price :'$250' ,
+    CourseTime: "7 hours 30 minutes",
+
+  },
+  {
+    ImageUrl : "../files/img3.jpg",
+    Description:"All about knee injuries in 8 full courses packet." ,
+    ProfessorName:"Ambatukam",
+    Header :'Medical' ,
+    Price :'$250' ,
+    CourseTime:"7 hours 30 minutes" ,
+
+  }
+]
+  const RenderResults = data =>
+  {
+
+    for(const hit of data)
+    {
+
+      const box = document.createElement('div')
+      box.classList.add('box')
+
+      const image = document.createElement('div')
+      image.classList.add('image')
+      const img = document.createElement('img')
+      img.src = hit.ImageUrl
+      image.appendChild(img)
+      const content = document.createElement('div')
+      content.classList.add('content')
+      const header = document.createElement('h3')
+      header.innerText = hit.Header
+      const p = document.createElement('p')
+      p.innerText = hit.Description
+      const pname = document.createElement('div')
+      pname.classList.add('professor-name')
+      pname.innerText = hit.ProfessorName
+      const price = document.createElement('div')
+      price.classList.add('price')
+      price.innerText = hit.Price
+      const ctime = document.createElement('div')
+      ctime.classList.add('course-time')
+      ctime.innerText = hit.CourseTime
+      const buy_button = document.createElement('a')
+      buy_button.classList.add('btn')
+      buy_button.href = '#'
+      buy_button.innerText = 'Buy Now'
+      content.appendChild(header)
+      content.appendChild(p)
+      content.appendChild(pname)
+      content.appendChild(price)
+      content.appendChild(ctime)
+      content.appendChild(buy_button)
+      box.appendChild(image)
+      box.appendChild(content)
+
+      BoxContainer.appendChild(box)
+    }
+
+  }
+
+
+
+  //populate the dom with fake data for testing
+  RenderResults(FakeData)
+
+</script>
 </body>
 </html>
