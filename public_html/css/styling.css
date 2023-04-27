@@ -10,8 +10,8 @@
     color: rgb(0, 27, 27);
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(238, 255, 255);
-    
+    text-transform: capitalize;
+    color: #333;
 }
 
 body{
@@ -45,7 +45,8 @@ nav{
     box-shadow: 0px 10px 40px   #888888;
     border-left: none;
     border-right: none;
-    
+    background-color: rgb(238, 255, 255);
+    z-index: 1000;
     width: 100%;
     position: fixed;
     /* top: 0%;
@@ -66,6 +67,7 @@ nav ul li.logo{
     font-size: 30px;
     font-weight: 700;
     margin: 10px 0px  15px -40px;
+    text-transform: none;
 }
 
 nav ul div.items{
@@ -120,8 +122,58 @@ nav ul .search-icon .icon:hover{
 }
 
 nav ul .search-icon .icon i{
-    background-color: transparent;
     font-size: 18px;
+}
+
+
+
+/*------------------ Home Page ------------------*/
+
+nav ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color:  rgb(255, 255, 255);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px  rgb(255, 255, 255);
+    padding: 12px 16px;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+
+.dropdown-content li {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-content li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dropdown-content li a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown-content li a:hover {
+    color:  white;
+    background-color:  rgb(255, 255, 255);
+  }
+
+  .fas{
+    margin-right: 10px;
+  }
+
+  .dropdown-menu:hover .dropdown-submenu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
 }
 
 
@@ -132,7 +184,6 @@ nav ul .search-icon .icon i{
 .home-popular,
 .home-header,
 .home-popular h3{
-    background-color: transparent;
     width: fit-content;
 }
 
@@ -178,4 +229,351 @@ h1{
 
 .home-header h1{
     font-size: 80px;
+}
+
+/*---page1 easyCourse Feautures----------DEN emfanizete opws prepei, sou eixa steile mia eikona sto discord gia to pws einai. to vlepoume na doume ti fteei!----------------------*/
+
+#features{
+    padding: 5px 10px 0 10px;
+    text-align: center;
+    background-color: #9fb9b9;
+}
+
+#features .fea-base{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+
+}
+
+#features .fea-box {                     
+    background: rgb(247, 236, 236);
+    text-align: start;
+}
+
+#features .fea-box i{
+    font-size: 2.5rem;
+    color: rgb(75, 72, 72) ;
+    text-align: center;
+   
+}
+
+#features .fea-box h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(75, 72, 72) ;
+    padding: 13px 0 7px 0;
+}
+
+#features .fea-box p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(75, 72, 72) ;
+}
+
+/*-------------- about us , continue page1 ----------------*/
+
+.home-about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #c6e9e9;
+}
+
+.home-about .image{     
+  flex: 1 1 1px;
+  padding: 100px;
+  
+  
+}
+
+.home-about .image img{
+  width: 100%;
+  border-radius: 30px ;
+  border: 2px solid white;
+}
+
+.home-about .content{   /* ---------na einai img/content pio enomena. to border to evale gia na vlepoume ean metakineitai -----------*/
+  flex:1 1 0.5px;
+  font-size: 18px;
+  transition: 100%;
+  text-align: center;
+  padding: 20px 20px;
+  line-height: 2.5;
+  color: black;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin-left: 80px;
+
+
+
+  
+}
+.home-about .content h3{
+ text-align: center;
+ font-size: 40px;
+ color:black;
+}
+
+
+
+.home-about .btn{            /* to btn na paei ligo pio katw apo to keimeno, kai na pare to xrwma tou backgroung. me to trasmition den to phre */
+  font-size: 20px;
+  border: 2px;
+                              transition: 100%;
+  padding: 15px 32px;
+  display: inline-block;
+  border-radius: 20px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  background-color: rgb(60, 243, 237) 90%;
+  color: black;
+  border: 2px solid black;
+  
+}
+
+.home-about .btn:hover{
+  background-color: rgb(0, 0, 0);
+  color:rgb(225, 241, 241);
+  border-radius: 20px solid black;
+}
+
+
+
+
+
+
+
+/* ---------------------------------courses page2 -----------------------------------*/
+
+
+/*--------------------filter menu-------------*/
+
+
+
+
+/* -------------------filter menu END----------*/
+
+
+
+/* ------------filter buttons START----------*/
+
+.button-group {
+  display: flex;
+  margin-left: 28%;
+  margin-top: -100px;
+}
+
+.button {
+  color: #666;
+  border:  2px solid rgb(0, 255, 255);
+  border-radius: 10px;
+  background-color: rgb(238, 255, 255)ite;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  padding: 8px 32px 8px 16px;  
+  cursor: pointer;
+  width: 280px;
+  height: 70px;
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.button:hover {
+  background-color: rgb(178, 240, 240);
+  color: black;
+}
+
+.button .remove-icon {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+}
+
+.button .remove-icon:hover {
+  color: rgb(0, 255, 255);
+  transition: color 0.1s ease-in;
+}
+
+/* ------------filter buttons END----------*/
+
+
+/* ------------courses result START----------*/
+
+  .packages {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 650px;
+  }
+
+  .box {
+    background-color:  rgb(238, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 5%;
+    width: 40%;
+    height: 40%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .box:hover {
+    transform: translateY(-10px);
+  }
+
+  .box .image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .box .content {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .box .content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .box .content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .box .content .course-time {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+
+  .box .content .price {
+    font-size: 24px;
+    color: #008080;
+    margin-bottom: 10px;
+  }
+
+  .box .content .btn {
+    display: inline-block;
+    background-color: #008080;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .box .content .btn:hover {
+    background-color:#333;
+  }
+
+  .professor-name {
+    font-size: bold;
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+/* ------------courses result END----------*/
+
+
+
+
+
+/*-------------- about us , continue page1 ----------------*/
+
+.home-about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #c6e9e9;
+}
+
+.home-about .image{     
+    flex: 1 1 1px;
+    padding: 100px;
+    
+    
+}
+
+.home-about .image img{
+    width: 100%;
+    border-radius: 30px ;
+    border: 2px solid white;
+}
+
+.home-about .content{   /* ---------na einai img/content pio enomena. to border to evale gia na vlepoume ean metakineitai -----------*/
+    flex:1 1 0.5px;
+    font-size: 18px;
+    transition: 100%;
+    text-align: center;
+    padding: 20px 20px;
+    line-height: 2.5;
+    color: black;
+    border: 2px solid white;
+    border-radius: 30px;
+    margin-left: 80px;
+
+
+
+    
+}
+.home-about .content h3{
+   text-align: center;
+   font-size: 40px;
+   color:black;
+}
+
+
+
+.home-about .btn{            /* to btn na paei ligo pio katw apo to keimeno, kai na pare to xrwma tou backgroung. me to trasmition den to phre */
+    font-size: 20px;
+    border: 2px;
+                                transition: 100%;
+    padding: 15px 32px;
+    display: inline-block;
+    border-radius: 20px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    background-color: rgb(60, 243, 237) 90%;
+    color: black;
+    border: 2px solid black;
+    
+}
+
+.home-about .btn:hover{
+    background-color: rgb(0, 0, 0);
+    color:rgb(225, 241, 241);
+    border-radius: 20px solid black;
 }
