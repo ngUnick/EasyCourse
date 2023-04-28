@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>About Us</title>
+    <link rel="stylesheet" href="../css/aboutus.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+
+    <!-- Κώδικας για να μπαίνει το Header απευθείας σε κάθε HTML αρχείο -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+         $("#header").load("header.html");
+      });
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+    <!-- Πάλι για να μπαίνει το Header -->
+    <div id="header"></div>
+
+
+    <section class="home-about">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+        </div>
+
+        <div class="content">
+            <h3>About Us</h3>
+            <p>Welcome to easyCourse! We are a team of passionate educators 
+                and professionals committed to providing quality educational resources to students of all ages. 
+                Our goal is to help you achieve your full potential and succeed in your educational journey. 
+                We believe that education is a powerful tool that can change lives, 
+                and we are here to support and guide you every step of the way. Thank you for choosing our website, and we look forward to helping you on your learning path!</p>
+            <a class="btn">read more</a>   
+        </div>
+    </section>
+
+  </body>
+</html>

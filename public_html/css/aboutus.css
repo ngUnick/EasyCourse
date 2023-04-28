@@ -1,0 +1,103 @@
+/*-------------- about us , continue page1 ----------------*/
+
+.home-about {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: transparent;
+    padding-top: auto;
+    padding-left: 100px;
+    padding-right: 180px;
+}
+
+.home-about .image{
+    padding: 100px;
+}
+
+.home-about .image img{
+    width: 35vw;
+    border-radius: 20px ;
+    border: 1.5px solid var(--main-background);
+}
+
+.home-about .content{
+    
+    font-size: 18px;
+    transition: 100%;
+    text-align: center;
+    padding: 0px 20px 20px;
+    line-height: 2.5;
+    color: black;
+    border-radius: 30px;
+    margin-left: 30px;
+}
+
+.home-about .content h3{
+    text-align: center;
+    font-size: 40px;
+    color:black;
+}
+
+.home-about .content p{
+    font-weight: 600;
+    text-align: justify;
+}
+
+.home-about .content .btn{
+    line-height: 1.5;
+    font-weight: 700 !important;
+    background-color: rgba(182, 233, 235, 0.35);
+    border: 1px solid rgba(0, 255, 255, 0.55);
+    padding: 10px 28px;
+    display: inline-block;
+    border-radius: 30px;
+    color: rgb(0, 109, 109);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.2s ease;
+    margin-top: 30px;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: rgba(0, 255, 255, 0.55);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.btn:hover::before{
+    width: 100%;
+}
+
+.btn:hover{
+    color: white !important;
+}
+
+@media(max-width: 1546px){
+    .home-about{
+        flex-direction: column;
+        padding-top: 60px;
+    }
+    
+    .image{
+        order: 2;
+        padding: 0% !important;
+        margin-top: 30px;
+    }
+
+    .content{
+        height: 450px !important;
+    }
+}

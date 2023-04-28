@@ -6,56 +6,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Our CSS -->
-        <link rel="stylesheet" href="css/styling.css">
-        <link rel="stylesheet" href="css/carousel.css">
+        <link rel="stylesheet" href="../css/styling.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/carousel.css">
         
         <!-- CSS for FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
         <!-- Our JS -->
-        <script src="js/script.js"></script>
-        <script src="js/carousel.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/carousel.js"></script>
         
+        <!-- Κώδικας για να μπαίνει το Header απευθείας σε κάθε HTML αρχείο -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function(){
+                $("#header").load("header.html");
+            });
+        </script>
 
     </head>
     <body>
 
-        <!---------------------- Navbar Start ---------------------->
-
-        <nav>
-            <ul>
-                <li class="logo"><a href="index.html"></a>easyCourse</li>
-                <li class="search-icon">
-                    <input type="search" placeholder="Search Courses">
-                    <label class="icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </label>
-                </li>
-                <div class="items">
-                    <li class="dropdown">
-                        <a href="#">
-                            <i class="fas fa-chevron-down"></i>categories</a>
-                        <label class="icon">
-                            <i class=" "></i>
-                        </label>
-                        <ul class="dropdown-content">
-                            <li><a href="#">Computers</a></li>
-                            <li><a href="#">Photography</a></li>
-                            <li><a href="#">Medical</a></li>
-                            <li><a href="#">Biomedical</a></li>
-                            <li><a href="#">Agriculture</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="#">about us</a></li>
-                    <li><a href="#">contact</a></li>
-                    <li><a href="login.html">log in</a></li>
-                </div>
-            </ul>
-
-        </nav>
-
-        <!---------------------- Navbar End ---------------------->
+        <!-- Πάλι για να μπαίνει το Header -->
+        <div id="header"></div>
 
 
 <!--
@@ -152,26 +127,12 @@ Internal Medicine I  (ΝΟΣΟΛΟΓΙΑ Ι) // ΤΜΗΜΑ ΝΟΣΗΛΕΥΤΙΚ�
 
         </section>
 
-        <section class="home-about">
-        <div class="image">
-            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-        </div>
-        <div class="content">
-            <h3>About Us</h3>
-            <p>Welcome to easyCourse! We are a team of passionate educators 
-                and professionals committed to providing quality educational resources to students of all ages. 
-                Our goal is to help you achieve your full potential and succeed in your educational journey. 
-                We believe that education is a powerful tool that can change lives, 
-                and we are here to support and guide you every step of the way. Thank you for choosing our website, and we look forward to helping you on your learning path!</p>
-            <button class="btn">Read More</a>   
-
-        </div>
-        </section>
+        
 
         <!-- 3-4 HOT courses offers/sugestions in the main page ( tha borouse me kathe ananewsh na petaei diaforetika course h meta na exoume ayta ta 3 standar!)-->
 
         <div class="box-container">
-            <h1>Most whatched courses</h1>
+            <h1>most watched courses</h1>
             <div class="box">
             <div class="content">
                 <h3>Medical</h3>

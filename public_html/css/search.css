@@ -1,15 +1,11 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   background: #7f979b;
 }
@@ -17,6 +13,14 @@ body{
   color: #fff;
   background: #8ba7ac;
 }
+
+.outer-wrapper{
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapper{
   width: 400px;
   background: #fff;
@@ -121,8 +125,6 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .button {
-  position: relative;
-  left: calc(50% - 50px);
   border: none;
   color: white;
   padding: 16px 26px;
@@ -130,11 +132,10 @@ input[type="range"]::-moz-range-thumb{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 40px 34px 0px;
   transition-duration: 0.3s;
   cursor: pointer;
   border-radius: 10px;
-
 }
 
 .button {

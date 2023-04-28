@@ -1,0 +1,48 @@
+/*------------------ Fonts ------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+/*------------------ Variables ------------------*/
+
+:root{
+    --main-background: rgb(238, 255, 255);
+}
+
+
+/*------------------ Global Stuff ------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 27, 27);
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    color: #333;
+}
+
+body{
+    height: 100vh;
+    background: no-repeat linear-gradient(50deg, var(--main-background) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, var(--main-background) 75%);
+}
+
+
+
+/*------------------ Custom Scrollbar ------------------*/
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--main-background);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 133, 133);
+}
+
+
+
+
