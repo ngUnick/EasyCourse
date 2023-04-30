@@ -30,11 +30,6 @@ nav ul .dropdown:hover .dropdown-content {
     font-size: 16px;
     text-decoration: none;
   }
-  
-  .dropdown-content li a:hover {
-    color:  white;
-    background-color:  var(--main-background);
-  }
 
   .fas{
     margin-right: 10px;
@@ -69,7 +64,7 @@ h1{
 }
 
 .home-popular{
-    padding: 20vh 8vw 15vh 3vw;
+    padding: 25vh 8vw 15vh 3vw;
 }
 
 .home-popular h3{
@@ -80,7 +75,7 @@ h1{
 }
 
 .home-header{
-    padding: 30vh 13vw 15vh 3vw;
+    padding: 35vh 13vw 15vh 3vw;
     text-align: center;
     text-transform: capitalize;
 
@@ -105,9 +100,10 @@ h1{
 /*---page1 easyCourse Feautures----------DEN emfanizete opws prepei, sou eixa steile mia eikona sto discord gia to pws einai. to vlepoume na doume ti fteei!----------------------*/
 
 #features{
-    padding: 5px 10px 0 10px;
-    text-align: center;
-    background-color: #9fb9b9;
+  padding: 5px 10px 0 10px;
+  text-align: center;
+  /* background-color: #d8dddd; */
+  margin-top: 300px;
 }
 
 #features .fea-base{
@@ -124,7 +120,7 @@ h1{
 
 #features .fea-box i{
     font-size: 2.5rem;
-    color: rgb(75, 72, 72) ;
+    color: rgb(233, 223, 223) ;
     text-align: center;
    
 }

@@ -23,7 +23,8 @@
 }
 
 body{
-    height: 100vh;
+    height: fit-content;
+    min-height: 100vh;
     background: no-repeat linear-gradient(50deg, var(--main-background) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, var(--main-background) 75%);
 }
 
