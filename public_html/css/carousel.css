@@ -18,7 +18,7 @@ li{
 }
 
 li img{
-  height: 150px;
+  /* height: 150px; */
   border-radius: 5% / 3%;
   border: 1px solid rgb(238, 255, 255);
   position: relative;
@@ -36,11 +36,15 @@ li img{
 }
 
 .slider-prev{
-  transform: translateX(100px);
+  position: absolute;
+  left: 220px;
+  top: 390px;
 }
 
 .slider-next{
-  transform: translateX(-100px);
+  position: absolute;
+  left: 850px;
+  top: 390px;
 }
 
 .slider-prev::before{
@@ -55,7 +59,8 @@ li img{
 }
 
 .description{
-  margin-top: 25px;
+  position: relative;
+  top: 350px;
 }
 
 .description h3{
@@ -67,8 +72,47 @@ h3.active{
   display: block !important;
 }
 
-/* img.active{
+.item {
+  flex: 1 0 20%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s ease-in-out;
+}
+
+.small1, .small2 {
+  height: 200px;
+  position: absolute;
+  z-index: -1;
+  top: 320px;
+}
+
+.big1, .big2 {
+  height: 250px;
+  position: absolute;
+  z-index: 0;
+  top: 290px;
+}
+
+.small1{
+  left: 270px;
+}
+
+.big1{
+  left: 350px;
+}
+
+.focus {
+  position: absolute;
+  z-index: 1;
   height: 300px;
-  transform: 'translateX(' + (-4 * 100) + 'px)';
-  z-index: 20;
-} */
+  left: 450px;
+  top: 260px;
+}
+
+.big2{
+  left: 580px;
+}
+
+.small2{
+  left: 700px;
+}
