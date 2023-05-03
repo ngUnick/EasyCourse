@@ -12,15 +12,13 @@ section{
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    
-    background: linear-gradient(50deg, rgb(238,255,255) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, rgb(238,255,255) 75%);
 }
 
 .form-box{
     position: relative;
     width: 400px;
     height: 450px;
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid var(--gray-alpha-50);
     border-radius: 20px;
     backdrop-filter: blur(15px);
     display: flex;
@@ -34,7 +32,7 @@ form{
 
 h2{
     font-size: 2em;
-    color: #fff;
+    color: var(--main-background);
     text-align: center;
     background-color: inherit;
 }
@@ -43,7 +41,7 @@ h2{
     position: relative;
     margin: 30px 0;
     width: 310px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--main-background);
 }
 
 .inputbox label{
@@ -51,7 +49,7 @@ h2{
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    color: #fff;
+    color: var(--main-background);
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
@@ -70,13 +68,13 @@ top: -5px;
     outline: none;
     font-size: 1em;
     padding:0 35px 0 5px;
-    color: #fff;
+    color: var(--main-background);
 }
 
 .inputbox ion-icon{
     position: absolute;
     right: 8px;
-    color: #fff;
+    color: var(--main-background);
     font-size: 1.2em;
     top: 20px;
 }
@@ -84,7 +82,7 @@ top: -5px;
 .forget{
     margin: -5px 0 18px ;
     font-size: .9em;
-    color: #fff;
+    color: var(--main-background);
     display: flex;
     justify-content: space-between;  
 }
@@ -95,7 +93,7 @@ top: -5px;
 }
 
 .forget label a{
-    color: #fff;
+    color: var(--main-background);
     text-decoration: none;
 }
 
@@ -107,7 +105,7 @@ button{
     width: 100%;
     height: 40px;
     border-radius: 40px;
-    background: #fff;
+    background: var(--main-background);
     border: none;
     outline: none;
     cursor: pointer;
@@ -117,14 +115,14 @@ button{
 
 .register{
     font-size: .9em;
-    color: #fff;
+    color: var(--main-background);
     text-align: center;
     margin: 25px 0 10px;
 }
 
 .register p a{
     text-decoration: none;
-    color: #fff;
+    color: var(--main-background);
     font-weight: 600;
 }
 

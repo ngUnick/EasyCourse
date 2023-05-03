@@ -5,51 +5,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="../css/login.css">
-  <link rel="stylesheet" href="../css/styling.css">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/search.css">
   <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/styling.css">
+
+  <!-- Κώδικας για να μπαίνει το Header απευθείας σε κάθε HTML αρχείο -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(function(){
+          $("#header").load("header.html");
+      });
+  </script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>easyCourse</title>
 </head>
 
 <body>
 
 
-    <!---------------------- Navbar Start ---------------------->
-
-    <nav>
-        <ul>
-            <li class="logo"><a href="index.html"></a>easyCourse</li>
-            <li class="search-icon">
-                <input type="search" placeholder="Search Courses">
-                <label class="icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </label>
-            </li>
-            <div class="items">
-                <li class="dropdown">
-                    <a href="#">
-                        <i class="fas fa-chevron-down"></i>categories</a>
-                    <label class="icon">
-                        <i class=" "></i>
-                    </label>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Computers</a></li>
-                        <li><a href="#">Photography</a></li>
-                        <li><a href="#">Medical</a></li>
-                        <li><a href="#">Biomedical</a></li>
-                        <li><a href="#">Agriculture</a></li>
-
-                    </ul>
-                </li>
-                <li><a href="#">about us</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="login.html">log in</a></li>
-            </div>
-        </ul>
-
-    </nav>
-
-    <!---------------------- Navbar End ---------------------->
+    <!-- Πάλι για να μπαίνει το Header -->
+    <div id="header"></div>
 
   <!-- <div class="container">   
       prospathisa na valw to filter menu apo ta aristera dimiourgodas ena neo div me ta 2 section    

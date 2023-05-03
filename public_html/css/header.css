@@ -2,7 +2,7 @@
 
 nav{
     padding: 10px 40px 10px 70px;
-    border: 1px solid cyan;
+    border: 1px solid var(--cyan);
     box-shadow: 0px 10px 40px   #888888;
     border-left: none;
     border-right: none;
@@ -17,7 +17,7 @@ nav{
 nav ul li.logo a{
     text-decoration: none;
     text-transform: none;
-    color: rgb(0, 133, 133);
+    color: var(--dark-cyan);
     font-size: 30px;
     font-weight: 700;
 }
@@ -50,7 +50,7 @@ nav ul div.items a{
     transition: color 0.3s ease-in;
 }
 nav ul div.items a:hover{
-    color: rgb(0, 255, 255);
+    color: var(--cyan);
     transition: color 0.3s ease-out;
 }
 
