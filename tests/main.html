@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Price Range Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    
+    <div class="wrapper">
+      
+      <header>
+        <h2>Categories</h2>
+      </header>
+
+      <div class="Categories-filter">
+
+        <p>- Medical</p>
+        <p>- Cyber Security</p>
+        <p>- Information Technology</p>
+        <p>- Mechanical Engineering </p>
+        <p>- Web Developer</p>
+        <p>- Data Analytics</p>
+        <p>.</p>
+        <p>.</p>
+
+      </div>
+
+      <header>
+        <h2>Date</h2>
+      </header>
+      <div class = "daterange">     <!-- den perasa ton script codika gi ayto-->
+        <div class = "from" >
+          <label for="dt_from">From</label>
+          <br>
+          <input type="date"  id="dt_from">
+        </div>
+        <div class = "to">
+          <label for="dt_to">To</label>
+          <br>
+          <input type="date"  id="dt_to">
+        </div>
+      </div>
+      <p>.</p>
+      <p>.</p>
+
+      <header>
+        <h2>Price Range</h2>
+        <p>Use slider or enter min and max price</p>
+      </header>
+      <div class="price-input">
+        <div class="field">
+          <span>Min</span>
+          <input type="number" class="input-min" value="250">
+        </div>
+        <div class="separator">-</div>
+        <div class="field">
+          <span>Max</span>
+          <input type="number" class="input-max" value="750">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="progress"></div>
+      </div>
+      <div class="range-input">
+        <input type="range" class="range-min" min="0" max="1000" value="250" step="10">
+        <input type="range" class="range-max" min="0" max="1000" value="750" step="10">
+      </div>
+      <p>.</p>
+      <button class="button">Search</button>
+    </div>
+      <script src="script.js"></script>
+  </body>
+</html>

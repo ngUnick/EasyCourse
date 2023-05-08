@@ -1,0 +1,351 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  background: var(--light-gray);
+}
+
+.outer-container-box{
+  display: flex;
+  padding: 200px;
+  
+}
+
+.container-box{
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+}
+
+::selection{
+  color: var(--main-background);
+  background: var(--light-gray);
+}
+
+.outer-wrapper{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wrapper{
+  width: 400px;
+  background: var(--main-background);
+  border-radius: 10px;
+  padding: 20px 25px 40px;
+  box-shadow: 0 12px 35px var(--box-shadow-black);
+}
+
+header h2{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.categories-filter p{
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categories-filter p:hover{
+  color: var(--cyan);
+}
+
+.price-input{
+  width: 100%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+
+.price-input .field{
+  display: flex;
+  width: 100%;
+  height: 45px;
+  align-items: center;
+}
+
+.field input{
+  width: 80%;
+  height: 90%;
+  outline: none;
+  font-size: 19px;
+  margin-left: 12px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid var(--light-gray);
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.price-input .separator{
+  width: 130px;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider{
+  height: 5px;
+  position: relative;
+  background: var(--slider-gray);
+  border-radius: 5px;
+}
+
+.slider .progress{
+  height: 100%;
+  left: 25%;
+  right: 25%;
+  position: absolute;
+  border-radius: 5px;
+  background: var(--dark-cyan);
+}
+
+.range-input{
+  display: flex;
+  position: relative;
+  
+}
+
+.range-input input{
+
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: var(--dark-cyan);
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px var(--box-shadow-black);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb{
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  background: var(--dark-cyan);
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px var(--box-shadow-black);
+}
+
+.search-button {
+  line-height: 1.5;
+  width: 200px;
+  font-weight: 700 !important;
+  background-color: transparent;
+  border: 1px solid var(--dark-cyan);
+  padding: 10px 65px;
+  display: inline-block;
+  border-radius: 10px;
+  color: var(--dark-cyan);
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  transition: color 0.5s ease;
+  margin-top: 30px;
+  margin-left: 75px;
+  z-index: 0;
+}
+
+.search-button::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--dark-cyan);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.search-button:hover::before{
+  width: 100%;
+}
+
+.search-button:hover {
+  color: var(--main-background);
+}
+
+
+
+/* ------------filter buttons START----------*/
+
+.button-group {
+  display: flex;
+  margin-left: 60px;
+  gap: 20px;
+}
+
+.button {
+  color: var(--dark-gray);
+  border:  2px solid var(--cyan);
+  border-radius: 10px;
+  background-color: var(--main-background);
+  box-shadow: 2px 2px 100px var(--box-shadow-black);
+  font-size: 20px;
+  padding: 6px 50px 6px 16px;  
+  width: fit-content;
+  cursor: initial;
+  height: fit-content;
+  position: relative;
+  display: inline-block;
+  transition: all 0.4s ease-in;
+}
+
+/* .button:hover {
+  background-color: var(--cyan);
+  color: var(--main-text-color);
+} */
+
+.button .remove-icon {
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--main-text-color);
+  transition: color 0.3s ease-out;
+}
+
+.button .remove-icon:hover {
+  color: var(--cyan);
+  transition: color 0.3s ease-out;
+}
+
+/* ------------filter buttons END----------*/
+
+
+/* ------------courses result START----------*/
+.result-field{
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.packages {
+  width: 980px;
+  height: min-content;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* .box-wrapper {        den vlwp pouthena kapoio box-wrapper
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+} */
+
+.box-container {
+  display: flex;
+  justify-content: center;   /* isws peritto */
+  align-items: flex-start;
+  margin: 50px 0px 0px;
+  width: 1150px;
+}
+
+.box {
+  background-color:  var(--main-background);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--main-text-color);
+  margin-left: 60px;
+  width: fit-content;
+  height: fit-content;
+  transition: all 0.4s ease-in-out;
+}
+
+.box:hover {
+  /* transform: translateY(-4px); */
+  box-shadow: 0 0 14px var(--main-text-color);
+}
+
+.box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box .content {
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  height: fit-content;
+}
+
+.box .content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box .content p {
+  font-size: 16px;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.box .content .course-time {
+  font-size: 14px;
+  color: var(--light-gray);
+  margin-bottom: 5px;
+}
+
+.box .content .price {
+  font-size: 24px;
+  color: var(--dark-cyan);
+  margin-bottom: 10px;
+}
+
+.box .content .btn {
+  display: inline-block;
+  background-color: var(--dark-cyan);
+  color: var(--main-background);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.box .content .btn:hover {
+  background-color: var(--main-text-color);
+}
+
+.professor-name {
+  font-size: bold;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+/* ------------courses result END----------*/

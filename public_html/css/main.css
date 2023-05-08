@@ -1,0 +1,61 @@
+/*------------------ Fonts ------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+/*------------------ Variables ------------------*/
+
+:root{
+    --main-background: rgb(238, 255, 255);
+    --main-text-color: rgb(0, 27, 27);
+    --cyan: cyan;
+    --gray-alpha-50: rgba(255,255,255,0.5);
+    --box-shadow-black: rgba(0,0,0,0.05);
+    --slider-gray: #ddd;
+    --light-gray: #999999;
+    --dark-gray: rgb(75, 72, 72);
+
+    /* main cyan */
+    --dark-cyan: rgb(0, 133, 133);
+
+    
+}
+
+
+/*------------------ Global Stuff ------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--main-text-color);
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    color: var(--main-text-color);
+}
+
+body{
+    height: fit-content;
+    min-height: 100vh;
+    background: no-repeat linear-gradient(50deg, var(--main-background) 0%, rgb(59, 192, 192) 40%, rgb(105, 204, 204) 50%, var(--main-background) 75%);
+}
+
+
+
+/*------------------ Custom Scrollbar ------------------*/
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--main-background);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--dark-cyan);
+}
+
+
+
+

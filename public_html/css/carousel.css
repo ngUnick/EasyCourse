@@ -18,9 +18,8 @@ li{
 }
 
 li img{
-  height: 150px;
   border-radius: 5% / 3%;
-  border: 1px solid rgb(238, 255, 255);
+  border: 1px solid var(--main-background);
   position: relative;
 }
 
@@ -32,21 +31,21 @@ li img{
   margin: auto;
   cursor: pointer;
   font-weight: 600;
-  
+  position: absolute;
+  top: 460px;
 }
 
 .slider-prev{
-  transform: translateX(100px);
+  left: 220px;
 }
 
 .slider-next{
-  transform: translateX(-100px);
+  left: 850px;
 }
 
 .slider-prev::before{
   content: '<';
   margin-right: 15px;
-  
 }
 
 .slider-next::before{
@@ -55,7 +54,8 @@ li img{
 }
 
 .description{
-  margin-top: 25px;
+  position: relative;
+  top: 350px;
 }
 
 .description h3{
@@ -67,8 +67,47 @@ h3.active{
   display: block !important;
 }
 
-/* img.active{
+.item{
+  flex: 1 0 20%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s ease-in-out;
+}
+
+.small1, .small2 {
+  height: 200px;
+  position: absolute;
+  z-index: -1;
+  top: 380px;
+}
+
+.big1, .big2 {
+  height: 250px;
+  position: absolute;
+  z-index: 0;
+  top: 350px;
+}
+
+.small1{
+  left: 270px;
+}
+
+.big1{
+  left: 350px;
+}
+
+.focus {
+  position: absolute;
+  z-index: 1;
   height: 300px;
-  transform: 'translateX(' + (-4 * 100) + 'px)';
-  z-index: 20;
-} */
+  left: 450px;
+  top: 320px;
+}
+
+.big2{
+  left: 580px;
+}
+
+.small2{
+  left: 700px;
+}
