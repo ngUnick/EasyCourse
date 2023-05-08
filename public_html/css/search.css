@@ -9,15 +9,26 @@ body{
   background: var(--light-gray);
 }
 
+.outer-container-box{
+  display: flex;
+  padding: 200px;
+  
+}
+
+.container-box{
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+}
+
 ::selection{
   color: var(--main-background);
   background: var(--light-gray);
 }
 
 .outer-wrapper{
-  padding-top: 150px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -29,19 +40,18 @@ body{
   box-shadow: 0 12px 35px var(--box-shadow-black);
 }
 
-.Categories-filter {
-  cursor: pointer;
-}
-
 header h2{
   font-size: 24px;
   font-weight: 600;
 }
 
-header p{
-  margin-top: 5px;
-  font-size: 16px;
-  text-transform: none;
+.categories-filter p{
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categories-filter p:hover{
+  color: var(--cyan);
 }
 
 .price-input{
@@ -179,3 +189,163 @@ input[type="range"]::-moz-range-thumb{
 .search-button:hover {
   color: var(--main-background);
 }
+
+
+
+/* ------------filter buttons START----------*/
+
+.button-group {
+  display: flex;
+  margin-left: 60px;
+  gap: 20px;
+}
+
+.button {
+  color: var(--dark-gray);
+  border:  2px solid var(--cyan);
+  border-radius: 10px;
+  background-color: var(--main-background);
+  box-shadow: 2px 2px 100px var(--box-shadow-black);
+  font-size: 20px;
+  padding: 6px 50px 6px 16px;  
+  width: fit-content;
+  cursor: initial;
+  height: fit-content;
+  position: relative;
+  display: inline-block;
+  transition: all 0.4s ease-in;
+}
+
+/* .button:hover {
+  background-color: var(--cyan);
+  color: var(--main-text-color);
+} */
+
+.button .remove-icon {
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--main-text-color);
+  transition: color 0.3s ease-out;
+}
+
+.button .remove-icon:hover {
+  color: var(--cyan);
+  transition: color 0.3s ease-out;
+}
+
+/* ------------filter buttons END----------*/
+
+
+/* ------------courses result START----------*/
+.result-field{
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.packages {
+  width: 980px;
+  height: min-content;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* .box-wrapper {        den vlwp pouthena kapoio box-wrapper
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+} */
+
+.box-container {
+  display: flex;
+  justify-content: center;   /* isws peritto */
+  align-items: flex-start;
+  margin: 50px 0px 0px;
+  width: 1150px;
+}
+
+.box {
+  background-color:  var(--main-background);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--main-text-color);
+  margin-left: 60px;
+  width: fit-content;
+  height: fit-content;
+  transition: all 0.4s ease-in-out;
+}
+
+.box:hover {
+  /* transform: translateY(-4px); */
+  box-shadow: 0 0 14px var(--main-text-color);
+}
+
+.box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box .content {
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  height: fit-content;
+}
+
+.box .content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box .content p {
+  font-size: 16px;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.box .content .course-time {
+  font-size: 14px;
+  color: var(--light-gray);
+  margin-bottom: 5px;
+}
+
+.box .content .price {
+  font-size: 24px;
+  color: var(--dark-cyan);
+  margin-bottom: 10px;
+}
+
+.box .content .btn {
+  display: inline-block;
+  background-color: var(--dark-cyan);
+  color: var(--main-background);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.box .content .btn:hover {
+  background-color: var(--main-text-color);
+}
+
+.professor-name {
+  font-size: bold;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+/* ------------courses result END----------*/
