@@ -14,6 +14,7 @@
 
 .home-about .image{
     padding: 100px;
+    max-width: 100%;
 }
 
 .home-about .image img{
@@ -22,66 +23,28 @@
     border: 1.5px solid var(--main-background);
 }
 
+.home-about .content h3{
+    text-align: center;
+    font-size: 40px;
+    color: var(--main-text-color);
+    margin-bottom: 2.5rem;
+}
+
 .home-about .content{
-    
-    font-size: 18px;
+    font-size: 1.2rem;
     transition: 100%;
     text-align: center;
     padding: 0px 20px 20px;
-    line-height: 2.5;
+    line-height: 2.5rem;
     color: var(--main-text-color);
     border-radius: 30px;
     margin-left: 30px;
 }
 
-.home-about .content h3{
-    text-align: center;
-    font-size: 40px;
-    color: var(--main-text-color);
-}
-
 .home-about .content p{
     font-weight: 600;
     text-align: justify;
-}
-
-.home-about .content .btn{
-    line-height: 1.5;
-    font-weight: 700 !important;
-    background-color: rgba(182, 233, 235, 0.35);
-    border: 1px solid var(--cyan);
-    padding: 10px 28px;
-    display: inline-block;
-    border-radius: 30px;
-    color: var(--dark-cyan);
-    cursor: pointer;
-    font-size: 16px;
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-    vertical-align: middle;
-    transition: color 0.2s ease;
-    margin-top: 30px;
-}
-
-.btn::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    background-color: var(--cyan);
-    z-index: -1;
-    transition: width 0.3s ease;
-}
-
-.btn:hover::before{
-    width: 100%;
-}
-
-.btn:hover{
-    color: var(--main-background) !important;
+    text-transform: none;
 }
 
 @media(max-width: 1546px){
