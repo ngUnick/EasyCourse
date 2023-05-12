@@ -3,6 +3,7 @@
   flex-direction: row;
   gap: 10px;
   width: 1000px;
+  /* position: relative; ---- tha to dokimasw argotera wste na einai pio responsive */
 }
 
 ul{
