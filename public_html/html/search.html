@@ -16,15 +16,8 @@
             $("#header").load("header.html");
         });
     </script>
-    <style>
-      .box-container{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .box{
-        margin-bottom: 10px;
-      }
-    </style>
+
+    
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -147,7 +140,6 @@
             ProfessorName:"Thug shaker",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime: "7 hours 30 minutes",
         
           },
           {
@@ -155,7 +147,6 @@
             ProfessorName:"Goulianas",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime: "7 hours 30 minutes",
         
           },
           {
@@ -163,7 +154,6 @@
             ProfessorName:"Ambatukam",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime:"7 hours 30 minutes" ,
         
           },
           {
@@ -171,7 +161,6 @@
             ProfessorName:"Thug shaker",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime: "7 hours 30 minutes",
         
           },
           {
@@ -179,7 +168,6 @@
             ProfessorName:"Goulianas",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime: "7 hours 30 minutes",
         
           },
           {
@@ -187,7 +175,6 @@
             ProfessorName:"Ambatukam",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime:"7 hours 30 minutes" ,
         
           },
           {
@@ -195,7 +182,6 @@
             ProfessorName:"Thug shaker",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime: "7 hours 30 minutes",
         
           },
           {
@@ -203,7 +189,6 @@
             ProfessorName:"Goulianas",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime: "7 hours 30 minutes",
         
           },
           {
@@ -211,7 +196,6 @@
             ProfessorName:"Ambatukam",
             Header :'Medical' ,
             Price :'$250' ,
-            CourseTime:"7 hours 30 minutes" ,
         
           }
         ]
@@ -236,19 +220,10 @@
               const price = document.createElement('div')
               price.classList.add('price')
               price.innerText = hit.Price
-              const ctime = document.createElement('div')
-              ctime.classList.add('course-time')
-              ctime.innerText = hit.CourseTime
-              const buy_button = document.createElement('a')
-              buy_button.classList.add('btn')
-              buy_button.href = '#'
-              buy_button.innerText = 'Buy Now'
               content.appendChild(header)
               content.appendChild(p)
               content.appendChild(pname)
               content.appendChild(price)
-              content.appendChild(ctime)
-              content.appendChild(buy_button)
               box.appendChild(content)
         
               BoxContainer.appendChild(box)
@@ -261,50 +236,64 @@
           //populate the dom with fake data for testing
           RenderResults(FakeData)
 
-const rangeInput = document.querySelectorAll(".range-input input"),
-priceInput = document.querySelectorAll(".price-input input"),
-range = document.querySelector(".slider .progress");
+          const rangeInput = document.querySelectorAll(".range-input input"),
+          priceInput = document.querySelectorAll(".price-input input"),
+          range = document.querySelector(".slider .progress");
 
 
 
-let priceGap = 100;
+          let priceGap = 100;
 
-priceInput.forEach(input =>{
-    input.addEventListener("input", e =>{
-        let minPrice = parseInt(priceInput[0].value),
-        maxPrice = parseInt(priceInput[1].value);
-        
-        if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
-            if(e.target.className === "input-min"){
-                rangeInput[0].value = minPrice;
-                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-            }else{
-                rangeInput[1].value = maxPrice;
-                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-            }
-        }
-    });
-});
+          priceInput.forEach(input =>{
+              input.addEventListener("input", e =>{
+                  let minPrice = parseInt(priceInput[0].value),
+                  maxPrice = parseInt(priceInput[1].value);
+                  
+                  if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
+                      if(e.target.className === "input-min"){
+                          rangeInput[0].value = minPrice;
+                          range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+                      }else{
+                          rangeInput[1].value = maxPrice;
+                          range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+                      }
+                  }
+              });
+          });
 
-rangeInput.forEach(input =>{
-    input.addEventListener("input", e =>{
-        let minVal = parseInt(rangeInput[0].value),
-        maxVal = parseInt(rangeInput[1].value);
+          rangeInput.forEach(input =>{
+              input.addEventListener("input", e =>{
+                  let minVal = parseInt(rangeInput[0].value),
+                  maxVal = parseInt(rangeInput[1].value);
 
-        if((maxVal - minVal) < priceGap){
-            if(e.target.className === "range-min"){
-                rangeInput[0].value = maxVal - priceGap
-            }else{
-                rangeInput[1].value = minVal + priceGap;
-            }
-        }else{
-            priceInput[0].value = minVal;
-            priceInput[1].value = maxVal;
-            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
-            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-        }
-    });
-});
+                  if((maxVal - minVal) < priceGap){
+                      if(e.target.className === "range-min"){
+                          rangeInput[0].value = maxVal - priceGap
+                      }else{
+                          rangeInput[1].value = minVal + priceGap;
+                      }
+                  }else{
+                      priceInput[0].value = minVal;
+                      priceInput[1].value = maxVal;
+                      range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                      range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                  }
+              });
+          });
+
+
+          // Για να πάμε στην σελίδα του μαθήματος μόλις πατήσουμε ένα από τα αποτελέσματα
+          
+          // Get all elements with the "box" class
+          const boxes = document.querySelectorAll('.box');
+
+          // Loop through each box and attach a click event listener
+          boxes.forEach(box => {
+            box.addEventListener('click', () => {
+              // Redirect to the next page
+              window.location.href = "courses.html";
+            });
+          });
 
         
         </script>

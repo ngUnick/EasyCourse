@@ -12,7 +12,7 @@ body{
 .outer-container-box{
   display: flex;
   padding: 200px;
-  
+  padding-bottom: 0px;
 }
 
 .container-box{
@@ -258,19 +258,9 @@ input[type="range"]::-moz-range-thumb{
   justify-content: flex-start;
 }
 
-/* .box-wrapper {        den vlwp pouthena kapoio box-wrapper
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-} */
-
 .box-container {
-  display: flex;
-  justify-content: center;   /* isws peritto */
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 50px 0px 0px;
   width: 1150px;
 }
@@ -279,10 +269,12 @@ input[type="range"]::-moz-range-thumb{
   background-color:  var(--main-background);
   border-radius: 5px;
   box-shadow: 0 0 10px var(--main-text-color);
-  margin-left: 60px;
+  margin-bottom: 30px;
+  margin-left: 70px;
   width: fit-content;
   height: fit-content;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 .box:hover {
@@ -344,7 +336,6 @@ input[type="range"]::-moz-range-thumb{
 .professor-name {
   font-size: bold;
   font-size: 17px;
-  cursor: pointer;
   margin-bottom: 2px;
 }
 
