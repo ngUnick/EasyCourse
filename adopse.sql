@@ -214,7 +214,11 @@ INSERT INTO iee2019067.`modules` VALUES (11646 , 'Ψηφιακή Φωτογρα�
 UNLOCK TABLES;
 
 
-
+CREATE TABLE iee2019067.`mailManagement` (
+`emails` varchar(60) NOT NULL,
+PRIMARY KEY (`emails`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
