@@ -13,7 +13,12 @@
     --box-shadow-black: rgba(0,0,0,0.05);
     --slider-gray: #ddd;
     --light-gray: #999999;
-    --dark-gray: rgb(75, 72, 72);
+    --dark-gray: rgb(72, 74, 75);
+    --logout-red: rgb(184, 23, 23);
+    --white-alpha-25: rgba(239, 254, 255, 0.25);
+    --white-alpha-30: rgba(239, 254, 255, 0.30);
+    --dark-cyan-alpha: rgba(0, 133, 133, 0.1);
+
 
     /* main cyan */
     --dark-cyan: rgb(0, 133, 133);
