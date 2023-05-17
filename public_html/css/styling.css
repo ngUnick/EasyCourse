@@ -75,66 +75,16 @@ h1{
 }
 
 .home-header{
-    padding: 35vh 13vw 15vh 3vw;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    text-transform: capitalize;
-
-
-    /*--Divide Text Into 3 Lines--*/
-    display: -webkit-box; /* Set the display property to -webkit-box to enable old WebKit syntax */
-    -webkit-box-orient: vertical; /* Set the box-orient property to vertical to make sure the content is arranged vertically */
-    /* overflow: hidden; Hide any text that overflows the block */
-    text-overflow: ellipsis; /* Add an ellipsis at the end of the last visible line */
-    -webkit-line-clamp: 3; /* Set the maximum number of lines to three */
-    /* The above line is the shorthand version of the following three properties:
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    display: -webkit-box; */
-      
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .home-header h1{
-    font-size: 80px;
+    font-size: 5.5rem;
+    text-transform: capitalize;
+    font-weight: 700;
 }
-
-/*---page1 easyCourse Feautures----------DEN emfanizete opws prepei, sou eixa steile mia eikona sto discord gia to pws einai. to vlepoume na doume ti fteei!----------------------*/
-
-#features{
-  padding: 5px 10px 0 10px;
-  text-align: center;
-  /* background-color: #d8dddd; */
-  margin-top: 300px;
-}
-
-#features .fea-base{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 1rem;
-
-}
-
-#features .fea-box {                     
-    background: var(--main-background);
-    text-align: start;
-}
-
-#features .fea-box i{
-    font-size: 2.5rem;
-    color: var(--main-background);
-    text-align: center;
-   
-}
-
-#features .fea-box h3{
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dark-gray);  /* μαλλον αχρειαστο */
-    padding: 13px 0 7px 0;
-}
-
-#features .fea-box p{
-    font-size: 1.rem;
-    font-weight: 400;
-    color: var(--dark-gray);  /* μαλλον αχρειαστο */
-}
-

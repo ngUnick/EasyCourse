@@ -1,45 +1,69 @@
-:root {
-  --primary-clr: #b38add;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-/* nice scroll bar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #f5f5f5;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary-clr);
-  border-radius: 50px;
+.wrapper{
+  padding: 180px 0px;
+  height: fit-content;
 }
 
-body {
-  position: relative;
-  min-height: 100vh;
+.logout{
+  width: 1200px !important;
+  height: fit-content;
+  margin: 5px auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 30px;
-  background-color: #e2e1dc;
+  justify-content: end;
+  align-items: end;
+  padding: 30px 15px;
 }
+
+.logout a{
+  width: max-content;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--logout-red);
+  text-transform: capitalize;
+  background-color: var(--white-alpha-25);
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--white-alpha-30);
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.5s ease;
+  z-index: 0;
+}
+
+.logout a::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--logout-red);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.logout a:hover::before{
+  width: 100%;
+}
+
+.logout a:hover{
+  color: var(--main-background);
+}
+
 .container {
   position: relative;
   width: 1200px;
   min-height: 850px;
   margin: 0 auto;
   padding: 5px;
-  color: #fff;
+  color: var(--main-background);
   display: flex;
 
   border-radius: 10px;
-  background-color: #373c4f;
+  background-color: var(--dark-gray);
 }
 .left {
   width: 60%;
@@ -55,7 +79,7 @@ body {
   justify-content: space-between;
   color: #878895;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--main-background);
 }
 /* set after behind the main element */
 
@@ -77,7 +101,7 @@ body {
 }
 .calendar .month .prev:hover,
 .calendar .month .next:hover {
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
 }
 .calendar .weekdays {
   width: 100%;
@@ -114,25 +138,25 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--primary-clr);
-  border: 1px solid #f5f5f5;
+  color: var(--dark-cyan);
+  border: 1px solid var(--dark-cyan-alpha);
 }
 .calendar .days .day:nth-child(7n + 1) {
-  border-left: 2px solid #f5f5f5;
+  border-left: 2px solid var(--dark-cyan-alpha);
 }
 .calendar .days .day:nth-child(7n) {
-  border-right: 2px solid #f5f5f5;
+  border-right: 2px solid var(--dark-cyan-alpha);
 }
 .calendar .days .day:nth-child(-n + 7) {
-  border-top: 2px solid #f5f5f5;
+  border-top: 2px solid var(--dark-cyan-alpha);
 }
 .calendar .days .day:nth-child(n + 29) {
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid var(--dark-cyan-alpha);
 }
 
 .calendar .days .day:not(.prev-date, .next-date):hover {
-  color: #fff;
-  background-color: var(--primary-clr);
+  color: var(--main-background);
+  background-color: var(--dark-cyan);
 }
 .calendar .days .prev-date,
 .calendar .days .next-date {
@@ -141,8 +165,8 @@ body {
 .calendar .days .active {
   position: relative;
   font-size: 2rem;
-  color: #fff;
-  background-color: var(--primary-clr);
+  color: var(--main-background);
+  background-color: var(--dark-cyan);
 }
 .calendar .days .active::before {
   content: "";
@@ -151,7 +175,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 10px 2px var(--primary-clr);
+  box-shadow: 0 0 10px 2px var(--dark-cyan);
 }
 .calendar .days .today {
   font-size: 2rem;
@@ -168,13 +192,13 @@ body {
   height: 6px;
   border-radius: 30px;
   transform: translateX(-50%);
-  background-color: var(--primary-clr);
+  background-color: var(--dark-cyan);
 }
 .calendar .days .day:hover.event::after {
-  background-color: #fff;
+  background-color: var(--main-background);
 }
 .calendar .days .active.event::after {
-  background-color: #fff;
+  background-color: var(--main-background);
   bottom: 20%;
 }
 .calendar .days .active.event {
@@ -189,14 +213,14 @@ body {
   gap: 5px;
   padding: 0 20px;
   margin-bottom: 20px;
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
 }
 .calendar .goto-today .goto {
   display: flex;
   align-items: center;
   border-radius: 5px;
   overflow: hidden;
-  border: 1px solid var(--primary-clr);
+  border: 1px solid var(--dark-cyan);
 }
 .calendar .goto-today .goto input {
   width: 100%;
@@ -205,24 +229,24 @@ body {
   border: none;
   border-radius: 5px;
   padding: 0 20px;
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
   border-radius: 5px;
 }
 .calendar .goto-today button {
   padding: 5px 10px;
-  border: 1px solid var(--primary-clr);
+  border: 1px solid var(--dark-cyan);
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
 }
 .calendar .goto-today button:hover {
-  color: #fff;
-  background-color: var(--primary-clr);
+  color: var(--main-background);
+  background-color: var(--dark-cyan);
 }
 .calendar .goto-today .goto button {
   border: none;
-  border-left: 1px solid var(--primary-clr);
+  border-left: 1px solid var(--dark-cyan);
   border-radius: 0;
 }
 .container .right {
@@ -249,11 +273,12 @@ body {
 .right .today-date .event-day {
   font-size: 2rem;
   font-weight: 500;
+  color: var(--main-background);
 }
 .right .today-date .event-date {
   font-size: 1rem;
   font-weight: 400;
-  color: #878895;
+  color: var(--light-gray);
 }
 .events {
   width: 100%;
@@ -275,7 +300,7 @@ body {
   gap: 5px;
   padding: 0 20px;
   padding-left: 50px;
-  color: #fff;
+  color: var(--main-background);
   background: linear-gradient(90deg, #3f4458, transparent);
   cursor: pointer;
 }
@@ -284,7 +309,7 @@ body {
   background: transparent;
 }
 .events .event:hover {
-  background: linear-gradient(90deg, var(--primary-clr), transparent);
+  background: linear-gradient(90deg, var(--dark-cyan), transparent);
 }
 .events .event .title {
   display: flex;
@@ -297,21 +322,21 @@ body {
   margin-left: 20px;
 }
 .events .event i {
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
   font-size: 0.5rem;
 }
 .events .event:hover i {
-  color: #fff;
+  color: var(--main-background);
 }
 .events .event .event-time {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #878895;
+  color: var(--light-gray);
   margin-left: 15px;
   pointer-events: none;
 }
 .events .event:hover .event-time {
-  color: #fff;
+  color: var(--main-background);
 }
 /* add tick in event after */
 .events .event::after {
@@ -325,7 +350,7 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0.3;
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
   transform: translateY(-50%);
 }
 .events .event:hover::after {
@@ -341,8 +366,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: #878895;
-  border: 2px solid #878895;
+  color: var(--light-gray);
+  border: 2px solid var(--light-gray);
   opacity: 0.5;
   border-radius: 50%;
   background-color: transparent;
@@ -353,6 +378,8 @@ body {
 }
 .add-event i {
   pointer-events: none;
+  color: var(--main-background);
+  margin-left: 9px;
 }
 .events .no-event {
   width: 100%;
@@ -362,8 +389,13 @@ body {
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #878895;
+  color: var(--light-gray);
 }
+
+.events .no-event h3{
+  color: var(--light-gray);
+}
+
 .add-event-wrapper {
   position: absolute;
   bottom: 100px;
@@ -372,7 +404,7 @@ body {
   max-height: 0;
   overflow: hidden;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--main-background);
   transform: translateX(-50%);
   transition: max-height 0.5s ease;
 }
@@ -386,15 +418,15 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  color: #373c4f;
-  border-bottom: 1px solid #f5f5f5;
+  color: var(--dark-gray);
+  border-bottom: 1px solid var(--dark-cyan-alpha);
 }
 .add-event-header .close {
   font-size: 1.5rem;
   cursor: pointer;
 }
 .add-event-header .close:hover {
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
 }
 .add-event-header .title {
   font-size: 1.2rem;
@@ -421,20 +453,20 @@ body {
   height: 100%;
   outline: none;
   border: none;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid var(--dark-cyan-alpha);
   padding: 0 10px;
   font-size: 1rem;
   font-weight: 400;
-  color: #373c4f;
+  color: var(--dark-gray);
 }
 .add-event-body .add-event-input input::placeholder {
-  color: #a5a5a5;
+  color: var(--light-gray);
 }
 .add-event-body .add-event-input input:focus {
-  border-bottom: 1px solid var(--primary-clr);
+  border-bottom: 1px solid var(--dark-cyan);
 }
 .add-event-body .add-event-input input:focus::placeholder {
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
 }
 .add-event-footer {
   display: flex;
@@ -448,16 +480,16 @@ body {
   font-weight: 500;
   outline: none;
   border: none;
-  color: #fff;
-  background-color: var(--primary-clr);
+  color: var(--main-background);
+  background-color: var(--dark-cyan);
   border-radius: 5px;
   cursor: pointer;
   padding: 5px 10px;
-  border: 1px solid var(--primary-clr);
+  border: 1px solid var(--dark-cyan);
 }
 .add-event-footer .add-event-btn:hover {
   background-color: transparent;
-  color: var(--primary-clr);
+  color: var(--dark-cyan);
 }
 
 /* media queries */
@@ -520,26 +552,6 @@ body {
   .right .today-date {
     padding: 20px;
   }
-}
-
-.credits {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  color: #fff;
-  background-color: #b38add;
-}
-.credits a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-.credits a:hover {
-  text-decoration: underline;
 }
 
 /*--------------------------------*/
