@@ -50,7 +50,7 @@ namespace Searcher
                 .ScoreDocs;
             long res = scoredocs.Length;
             return (scoredocs
-                .Skip(offset)
+                .Skip(offset* numofresults)
                 .Take(numofresults)
                 .ToImmutableArray(), res, s);
         }
