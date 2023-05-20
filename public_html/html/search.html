@@ -170,10 +170,7 @@
           document.getElementById('dt_to').value = "2024-01-01"
 
           let Query = { query: new URLSearchParams(window.location.search).get('term') ,
-          priceRange : {
-              low :rangeInput[0].value,
-              high : rangeInput[1].value },
-          dateRange:{
+           dateRange:{
             from : document.getElementById('dt_from').value  ,
                to:document.getElementById('dt_to').value , 
           },
