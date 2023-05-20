@@ -16,8 +16,32 @@
             $("#header").load("header.html");
         });
     </script>
+    <style>
+      #pag
+      {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 40px;
+        z-index: 99999;
+      }
+      .box-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
 
-    
+      }
+      .box{
+        margin-bottom: 10px;
+        height: 95%;
+        width: 95%;
+      }
+      .pagin{
+        cursor: pointer;
+        color:blue;
+        margin-right: 10px;
+      }
+    </style>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -51,6 +75,7 @@
             </div>
       
             <header>
+              <input type = text placeholder="module" id="src" style="font-size:large;width:100%;">
               <h2>Date</h2>
             </header>
             <div class = "daterange">     <!-- den perasa ton script codika gi ayto -->
@@ -90,12 +115,11 @@
               <input type="range" class="range-min" min="0" max="1000" value="250" step="10">
               <input type="range" class="range-max" min="0" max="1000" value="750" step="10">
             </div>
-            <a class="search-button">search</a>
+            <a class="search-button" id = "zawarudo">search</a>
           </div>
         </div>
         
-          <script src="script2.js"></script>
-    
+          
           
         <div class="result-field">
           <section class="packages" id="packages">
@@ -109,105 +133,136 @@
                 Price: $50 - $300 
                 <span class="remove-icon">&#x2716;</span>
               </button>
-              <button class="button">
+              <button class="button" id = 'thugShaker'>
                 Online 
-                <span class="remove-icon">&#x2716;</span>
               </button>
             </div>
             
             
-            
-            <div class="box-container">
+            <div class="box-container" id = "cnts">
+              
             </div>
-            
-            
-          
-          </section>
+            <div id = "pag" ></div>
 
+            
+            
+          </section>
+        
         </div>
+       
     
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
         <script>
-        
-          const BoxContainer = document.getElementsByClassName('box-container')[0]
-        
-          const FakeData = 
-          [
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Thug shaker",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
+          const parseDate = strf => new Date(strf).toString()
+
+          const rangeInput = document.querySelectorAll(".range-input input");
+          document.getElementById('dt_from').value = "2019-01-01"
+          document.getElementById('dt_to').value = "2024-01-01"
+
+          let Query = { query: new URLSearchParams(window.location.search).get('term') ,
+          priceRange : {
+              low :rangeInput[0].value,
+              high : rangeInput[1].value },
+          dateRange:{
+            from : document.getElementById('dt_from').value  ,
+               to:document.getElementById('dt_to').value , 
           },
+          offset : 0 ,
+          numOfResults : 20}
+           
+          
+          let BoxContainer = document.querySelector('.box-container')
+
+      
+          document.getElementById('zawarudo').addEventListener('click',
+          e=>
           {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Goulianas",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
+            str = document.getElementById('src').value 
+            if(str === undefined || str === null || str === '')
+               Query.query = null
+            else
+               Query.query = str
+            Query.priceRange = {
+              low :rangeInput[0].value,
+              high : rangeInput[1].value }
+            Query.dateRange = {
+              from : document.getElementById('dt_from').value  ,
+               to:document.getElementById('dt_to').value 
+              }
+            SearchInIndex()
+
+          });
+
+          const SearchInIndex = () =>
           {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Ambatukam",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Thug shaker",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Goulianas",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Ambatukam",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Thug shaker",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Goulianas",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
-          },
-          {
-            Description:"All about knee injuries in 8 full courses packet." ,
-            ProfessorName:"Ambatukam",
-            Header :'Medical' ,
-            Price :'$250' ,
-        
+            if (Query.query === '')
+             return
+            if(Query.priceRange === undefined || Query.priceRange === null)
+             Query.priceRange = {low: 0 , high: 1000}
+
+            $.ajax({
+             url: `http://localhost:5176/search?query=${JSON.stringify(Query)}`,
+             type:'GET',
+             contentType:'application/json',
+             dataType:'json',
+             cache:false,
+             headers:{
+                 'accept':'application/json',
+                 'Access-Control-Allow-Origin':'*',
+                 'Access-Control-Allow-Headers':'*'
+             },
+             success:RenderResults,
+             error: err => alert(err.errormesg)    });
           }
-        ]
-          const RenderResults = data =>
+         const CleanDom = () =>
+         {
+            const div = document.createElement('div')
+            div.setAttribute('id','cnts')
+            div.classList.add('box-container')
+            document.querySelector('#cnts').remove()
+            document.querySelector('.packages').appendChild(div)
+            document.querySelector('#pag').remove()
+            const pagin = document.createElement('div')
+            pagin.setAttribute('id','pag')
+            document.querySelector('.packages').appendChild(pagin)
+
+         }
+
+         const DoPaginate = numof =>
+         {
+          const pagin = document.getElementById('pag')
+          console.log(numof)
+          for(let i =0 ; i < Math.ceil( parseInt(numof) / 20) ; ++i )
           {
-        
-            for(const hit of data)
-            {
-        
+              const page = document.createElement('div')
+              page.classList.add('pagin')
+              page.innerText = i
+              page.addEventListener('click',
+              e=>
+              {
+                offset = parseInt(e.target.innerText)
+                Query.offset = offset
+                SearchInIndex()
+              })
+              pagin.appendChild(page)
+
+          }
+
+         } 
+
+          const RenderResults = boj =>{
+            console.log(boj)
+            CleanDom()
+            BoxContainer = document.querySelector('.box-container')
+            const data = boj.Data
+            const numof = boj.NumberOfResults
+            document.querySelector('#thugShaker').innerText = `results found : ${numof}`
+            for(const hit of data){
+              hit.Description = "do the thug shaker take your shirt off and shake that shit"
               const box = document.createElement('div')
               box.classList.add('box')
-        
               const content = document.createElement('div')
               content.classList.add('content')
               const header = document.createElement('h3')
@@ -220,84 +275,79 @@
               const price = document.createElement('div')
               price.classList.add('price')
               price.innerText = hit.Price
+              const ctime = document.createElement('div')
+              ctime.classList.add('course-time')
+              ctime.innerText = hit.Date
+              const buy_button = document.createElement('a')
+              buy_button.classList.add('btn')
+              buy_button.innerText = 'Buy Now'
+              buy_button.addEventListener('click', _=> window.location.href = `courses.html?course=${hit.moduleID}`)
               content.appendChild(header)
               content.appendChild(p)
               content.appendChild(pname)
               content.appendChild(price)
+              content.appendChild(ctime)
+              content.appendChild(buy_button)
               box.appendChild(content)
-        
               BoxContainer.appendChild(box)
             }
-        
+            DoPaginate(numof)
           }
         
         
         
           //populate the dom with fake data for testing
-          RenderResults(FakeData)
-
-          const rangeInput = document.querySelectorAll(".range-input input"),
-          priceInput = document.querySelectorAll(".price-input input"),
-          range = document.querySelector(".slider .progress");
+          SearchInIndex()
 
 
-
-          let priceGap = 100;
-
-          priceInput.forEach(input =>{
-              input.addEventListener("input", e =>{
-                  let minPrice = parseInt(priceInput[0].value),
-                  maxPrice = parseInt(priceInput[1].value);
-                  
-                  if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
-                      if(e.target.className === "input-min"){
-                          rangeInput[0].value = minPrice;
-                          range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-                      }else{
-                          rangeInput[1].value = maxPrice;
-                          range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-                      }
-                  }
-              });
-          });
-
-          rangeInput.forEach(input =>{
-              input.addEventListener("input", e =>{
-                  let minVal = parseInt(rangeInput[0].value),
-                  maxVal = parseInt(rangeInput[1].value);
-
-                  if((maxVal - minVal) < priceGap){
-                      if(e.target.className === "range-min"){
-                          rangeInput[0].value = maxVal - priceGap
-                      }else{
-                          rangeInput[1].value = minVal + priceGap;
-                      }
-                  }else{
-                      priceInput[0].value = minVal;
-                      priceInput[1].value = maxVal;
-                      range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
-                      range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-                  }
-              });
-          });
+const priceInput = document.querySelectorAll(".price-input input"),
+range = document.querySelector(".slider .progress");
 
 
-          // Για να πάμε στην σελίδα του μαθήματος μόλις πατήσουμε ένα από τα αποτελέσματα
-          
-          // Get all elements with the "box" class
-          const boxes = document.querySelectorAll('.box');
 
-          // Loop through each box and attach a click event listener
-          boxes.forEach(box => {
-            box.addEventListener('click', () => {
-              // Redirect to the next page
-              window.location.href = "courses.html";
-            });
-          });
+let priceGap = 100;
+
+priceInput.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minPrice = parseInt(priceInput[0].value),
+        maxPrice = parseInt(priceInput[1].value);
+        
+        if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
+            if(e.target.className === "input-min"){
+                rangeInput[0].value = minPrice;
+                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+            }else{
+                rangeInput[1].value = maxPrice;
+                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+            }
+        }
+    });
+});
+
+rangeInput.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minVal = parseInt(rangeInput[0].value),
+        maxVal = parseInt(rangeInput[1].value);
+
+        if((maxVal - minVal) < priceGap){
+            if(e.target.className === "range-min"){
+                rangeInput[0].value = maxVal - priceGap
+            }else{
+                rangeInput[1].value = minVal + priceGap;
+            }
+        }else{
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+    });
+});
 
         
         </script>
       </div>
     </div>
+   
   </body>
 </html>

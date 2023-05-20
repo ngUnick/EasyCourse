@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   </head>
   <body>
 
@@ -20,12 +21,23 @@
       <ul>
         <li class="logo"><a href="index.html">easyCourse</a></li>
         <li class="search-icon">
-            <input type="search" placeholder="Search Courses">
+            <input type="search" placeholder="Search Courses" id="searchinput">
             
             <label class="icon">
-              <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+              <!--<a href="search.html">--><i class="fa-solid fa-magnifying-glass" id="searchbutton"></i><!--</a>--><!--ΝΑ ΓΙΝΕΙ DYNAMIC-->
             </label>
-          
+            <script>
+
+              const sin = document.getElementById('searchinput');
+              const sbutton = document.getElementById('searchbutton');
+
+              sbutton.addEventListener("click", search);
+        
+              function search(){
+                const searchQuery = sin.value;
+                window.location.href = `search.html?term=${searchQuery}`;
+              }
+            </script>
         </li>
         <div class="items">
             <li class="dropdown">

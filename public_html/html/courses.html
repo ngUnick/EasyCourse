@@ -32,27 +32,26 @@
       <div class="course-inner-wrapper">
         <div class="description">
           <div class="main-description">
-              <div class="course-name">
+              <div class="course-name" id="nam">
                 Automate the Boring Stuff with Python Programming
               </div>
               <div class="course-description">
-                A practical programming course for office workers, academics, 
-                and administrators who want to improve their productivity.
+                giati uparxei auto to div
               </div>
               <div class="course-teacher">
-                  Professor: <span>goulianas k.</span>
+                  Professor: <span  id="prf">goulianas k.</span>
               </div>
-              <div class="course-rating">
+              <div class="course-rating" id="rat">
                 Rating:
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
                 <span class="fa fa-star"></span>
-                <span class="total-students"> | 780  <i class="fas fa-user-graduate"></i></span>
+                <span class="total-students" id = "hr"> | 780  <i class="fas fa-user-graduate"></i></span>
               </div>
               <div class="course-language">
-                <i class="fas fa-university"></i> Lab
+                <i class="fas fa-university" id="lab"></i> 
                 <div class="btn-wrapper">
                   <button class="btn">enroll</button>
                 </div>
@@ -75,6 +74,43 @@
     </div>
 
 
+<script>
 
+  const RequestedCourse = new URLSearchParams(window.location.search).get('course')
+
+  //[FromService]
+
+  const GetCourseData = () =>
+          {
+  
+            $.ajax({
+             url: `http://localhost:5176/fetch?moduleID=${RequestedCourse}`,
+             type:'GET',
+             contentType:'application/json',
+             dataType:'json',
+             cache:false,
+             processData: false,
+             success: FillDom ,
+             error: err => alert(err.errormesg)    });
+          }
+
+ const FillDom = data =>
+ {
+   document.getElementById('nam').innerText = data.CourseName
+   document.getElementById('prf').innerText = data.Prof
+   document.getElementById("lab").innerText = data.Dept
+   document.getElementById('hr').innerText = `${data.Hr} hr`
+   
+   const stars = document.getElementById('rat').children
+
+   for( let i = 0 ; i < parseInt(data.Rating) ; ++i)
+   {
+     stars[i].classList.add('checked')
+   }
+
+ }
+
+ GetCourseData()
+</script>
   </body>
 </html>
