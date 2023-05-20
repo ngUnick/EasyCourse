@@ -48,7 +48,7 @@ class Program
 
    
 
-    const string path = "C:\\Users\\lazar\\OneDrive\\Desktop\\New folder\\shot.csv";
+    const string path = "./shot.csv";
 
     public class DbCols
     {
@@ -76,7 +76,7 @@ class Program
         {
             var records = CSV.GetRecords<DbCols>().ToArray();
             lucene.Store.Directory dir = lucene.Store.FSDirectory.Open(
-          "C:\\Users\\lazar\\OneDrive\\Desktop\\index");
+          "./index");
             var ir = new lucene.Index.IndexWriter(dir, LuceneContext.analyzer,
                 lucene.Index.IndexWriter.MaxFieldLength.UNLIMITED);
 
