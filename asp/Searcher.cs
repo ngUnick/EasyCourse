@@ -50,13 +50,13 @@ namespace Searcher
                 .ScoreDocs;
             long res = scoredocs.Length;
             return (scoredocs
-                .Skip(offset)
+                .Skip(offset* numofresults)
                 .Take(numofresults)
                 .ToImmutableArray(), res, s);
         }
 
 
-        private static ResponseJson __serialize(ImmutableArray<lucene.Search.ScoreDoc> docs, long resct,
+        private static ResponseJson __prepForserialization(ImmutableArray<lucene.Search.ScoreDoc> docs, long resct,
            IndexSearcher src)
         {
             ResponseJson r = new();
@@ -85,7 +85,7 @@ namespace Searcher
                 DateTime.Parse(q.dateRange.to).Ticks,
                 q.priceRange.low, q.priceRange.high,
                 q.numOfResults, q.offset);
-            return __serialize(docs, num, src); 
+            return __prepForserialization(docs, num, src); 
         }
     }
 
