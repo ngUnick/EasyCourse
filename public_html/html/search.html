@@ -17,6 +17,14 @@
         });
     </script>
     <style>
+      .arrowsmth
+      {
+        font-size: large;
+        color: red;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
       #pag
       {
         display: flex;
@@ -156,7 +164,7 @@
     
         <script>
           const parseDate = strf => new Date(strf).toString()
-
+          let pagenum;
           const rangeInput = document.querySelectorAll(".range-input input");
           document.getElementById('dt_from').value = "2019-01-01"
           document.getElementById('dt_to').value = "2024-01-01"
@@ -229,12 +237,49 @@
             document.querySelector('.packages').appendChild(pagin)
 
          }
+         
 
-         const DoPaginate = numof =>
+         const NextPage = e => 
+         { 
+            const offset = Query.offset
+            if(e.target.innerText == '◀'){
+              if(offset == 0 )
+                return
+              Query.offset = offset -1;
+              SearchInIndex()
+            }
+            else if(e.target.innerText == '▶'){
+              if(offset >= pagenum -1 )
+                return
+              Query.offset = offset + 1;
+              SearchInIndex()
+            }
+            else
+             alert('no idea')
+        }
+        
+        const RerenderPages = () =>
+        {
+          const pagin = document.getElementById('pag')
+          const offset = Query.offset
+          for(let i = offset+5 ; i < pagenum - 5; ++i)
+            pagin.children[i+1].hidden = true
+          for(let i = 0 ; i < offset ; ++i )
+              pagin.children[i+1].hidden = true
+          for(let i = offset ; i < Math.min(5,pagenum) ; ++i )
+              pagin.children[i+1].hidden = false
+
+        }
+        const DoPaginate = numof =>
          {
           const pagin = document.getElementById('pag')
-          console.log(numof)
-          for(let i =0 ; i < Math.ceil( parseInt(numof) / 20) ; ++i )
+          pagenum = Math.ceil( parseInt(numof) / 20) 
+          const prev = document.createElement('div')
+          prev.classList.add('arrowsmth')
+          prev.innerText = '◀'
+          prev.addEventListener('click',NextPage)
+          pagin.appendChild(prev)
+          for(let i = 0 ; i < pagenum ; ++i )
           {
               const page = document.createElement('div')
               page.classList.add('pagin')
@@ -246,9 +291,17 @@
                 Query.offset = offset
                 SearchInIndex()
               })
+
               pagin.appendChild(page)
 
           }
+          
+          const next = document.createElement('div')
+          next.innerText = '▶'
+          next.classList.add('arrowsmth')
+          next.addEventListener('click',NextPage)
+          pagin.appendChild(next)
+          RerenderPages()
 
          } 
 

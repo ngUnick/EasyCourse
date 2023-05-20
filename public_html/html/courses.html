@@ -21,6 +21,44 @@
     </script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+
+    let isBodyLoaded = false;
+
+    const RequestedCourse = new URLSearchParams(window.location.search).get('course')
+    
+      //[FromService]
+    
+    const GetCourseData = () =>{
+                $.ajax({
+                 url: `http://localhost:5176/fetch?moduleID=${RequestedCourse}`,
+                 type:'GET',
+                 contentType:'application/json',
+                 dataType:'json',
+                 cache:false,
+                 processData: false,
+                 success: FillDom ,
+                 error: err => alert(err.errormesg)    });
+      }
+    const FillDom = data =>
+    {
+        while(!isBodyLoaded)
+           continue
+        document.getElementById('nam').innerText = data.CourseName
+        document.getElementById('prf').innerText = data.Prof
+        document.getElementById("lab").innerText = data.Dept
+        document.getElementById('hr').innerText = `${data.Hr} hr`
+        const stars = document.getElementById('rat').children
+        for( let i = 0 ; i < parseInt(data.Rating) ; ++i)
+          stars[i].classList.add('checked')
+    }
+   
+   window.addEventListener('DOMContentLoaded',()=>{isBodyLoaded = true});
+
+   GetCourseData()
+
+    </script>
   </head>
   <body>
 
@@ -33,13 +71,13 @@
         <div class="description">
           <div class="main-description">
               <div class="course-name" id="nam">
-                Automate the Boring Stuff with Python Programming
+                
               </div>
               <div class="course-description">
                 giati uparxei auto to div
               </div>
               <div class="course-teacher">
-                  Professor: <span  id="prf">goulianas k.</span>
+                  Professor: <span  id="prf"></span>
               </div>
               <div class="course-rating" id="rat">
                 Rating:
@@ -74,43 +112,5 @@
     </div>
 
 
-<script>
-
-  const RequestedCourse = new URLSearchParams(window.location.search).get('course')
-
-  //[FromService]
-
-  const GetCourseData = () =>
-          {
-  
-            $.ajax({
-             url: `http://localhost:5176/fetch?moduleID=${RequestedCourse}`,
-             type:'GET',
-             contentType:'application/json',
-             dataType:'json',
-             cache:false,
-             processData: false,
-             success: FillDom ,
-             error: err => alert(err.errormesg)    });
-          }
-
- const FillDom = data =>
- {
-   document.getElementById('nam').innerText = data.CourseName
-   document.getElementById('prf').innerText = data.Prof
-   document.getElementById("lab").innerText = data.Dept
-   document.getElementById('hr').innerText = `${data.Hr} hr`
-   
-   const stars = document.getElementById('rat').children
-
-   for( let i = 0 ; i < parseInt(data.Rating) ; ++i)
-   {
-     stars[i].classList.add('checked')
-   }
-
- }
-
- GetCourseData()
-</script>
   </body>
 </html>
