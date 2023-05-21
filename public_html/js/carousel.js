@@ -3,17 +3,19 @@
 document.addEventListener("click", (e) =>{
     if(e.target.classList.contains("slider-prev")){
         togglePrevious();
+        togglePreviousDesc();
         updatePrev();
     }
     else if(e.target.classList.contains("slider-next")){
         toggleNext();
+        toggleNextDesc();
         updateNext();
     }
 })
 
 
 
-// Rotate the h3 text -----------------------------------------------------------
+// Rotate the Course Title -----------------------------------------------------------
 
 function togglePrevious(){
     const currentActive = document.querySelector("h3.active");
@@ -56,7 +58,50 @@ function toggleNext(){
 
 
 
-// Rotate the images -----------------------------------------------------------
+// Rotate the Course Description -----------------------------------------------------------
+
+function togglePreviousDesc(){
+  const currentActive = document.querySelector("h2.active");
+  const currentIndex = parseInt(currentActive.dataset.index);
+  //console.log(currentIndex);
+
+  if(currentIndex - 1 >= 10){
+      const previousChild = document.querySelector(`[data-index="${currentIndex-1}"]`);
+      //console.log(previousChild)
+      currentActive.classList.remove("active");
+      previousChild.classList.add("active");
+  }
+  else{
+      const previousChild = document.querySelector(`[data-index="${14}"]`);
+      //console.log(previousChild)
+      currentActive.classList.remove("active");
+      previousChild.classList.add("active");
+  }
+}
+
+
+function toggleNextDesc(){
+  const currentActive = document.querySelector("h2.active");
+  const currentIndex = parseInt(currentActive.dataset.index);
+  //console.log(currentIndex);
+
+  if(currentIndex + 1 <= 14){
+      const nextChild = document.querySelector(`[data-index="${currentIndex+1}"]`);
+      //console.log(nextChild)
+      currentActive.classList.remove("active");
+      nextChild.classList.add("active");
+  }
+  else{
+      const nextChild = document.querySelector(`[data-index="${10}"]`);
+      //console.log(nextChild)
+      currentActive.classList.remove("active");
+      nextChild.classList.add("active");
+  }
+}
+
+
+
+// Rotate the Course Images -----------------------------------------------------------
 
 function updateNext() {
     // Set the position of each item based on the current index

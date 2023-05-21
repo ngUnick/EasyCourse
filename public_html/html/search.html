@@ -20,7 +20,7 @@
       .arrowsmth
       {
         font-size: large;
-        color: red;
+        color: var(--logout-red);
         margin-left: 10px;
         margin-right: 10px;
         cursor: pointer;
@@ -35,7 +35,7 @@
       }
       .pagin{
         cursor: pointer;
-        color:blue;
+        color: var(--dark-cyan);
         margin-right: 10px;
       }
     </style>
@@ -54,25 +54,12 @@
         <div class="outer-wrapper">
           <div class="wrapper">
           
-            <header>
-              <h2>categories</h2>
-            </header>
       
-            <div class="categories-filter">
-      
-              <p>- medical</p>
-              <p>- cyber security</p>
-              <p>- information technology</p>
-              <p>- mechanical engineering </p>
-              <p>- web developer</p>
-              <p>- data analytics</p>
-              <p>.</p>
-              <p>.</p>
-      
-            </div>
+            
       
             <header>
-              <input type = text placeholder="module" id="src" style="font-size:large;width:100%;">
+              <h2 style="margin: 8px 0px 5px;">Course</h2>
+              <input type="text" placeholder="Course" id="src" class="module">
               <h2>Date</h2>
             </header>
             <div class = "daterange">     <!-- den perasa ton script codika gi ayto -->
@@ -87,8 +74,6 @@
                 <input type="date"  id="dt_to">
               </div>
             </div>
-            <p>.</p>
-            <p>.</p>
       
             <header>
               <h2>price range</h2>
@@ -122,16 +107,16 @@
           <section class="packages" id="packages">
     
             <div class="button-group">
-              <button class="button">
+              <!-- <button class="button">
                 Medical 
                 <span class="remove-icon">&#x2716;</span>
               </button>
               <button class="button">
                 Price: $50 - $300 
                 <span class="remove-icon">&#x2716;</span>
-              </button>
-              <button class="button" id = 'thugShaker'>
-                Online 
+              </button> -->
+              <button class="button" id="thugShaker">
+                *Results number*
               </button>
             </div>
             

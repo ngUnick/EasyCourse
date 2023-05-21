@@ -40,18 +40,30 @@ body{
   box-shadow: 0 12px 35px var(--box-shadow-black);
 }
 
+.module{
+  font-size:large;
+  width:100%;
+  margin-top: 15px;
+  border-radius: 4px;
+  padding: 3px 6px;
+}
+
+#dt_from,
+#dt_to{
+  border-radius: 4px;
+  padding: 2px 3px;
+}
+
 header h2{
   font-size: 24px;
   font-weight: 600;
+  color: var(--main-text-color);
+  width: fit-content;
+  margin: 35px 0px 5px;
 }
 
-.categories-filter p{
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.categories-filter p:hover{
-  color: var(--cyan);
+header p{
+  text-transform: none;
 }
 
 .price-input{
@@ -214,6 +226,10 @@ input[type="range"]::-moz-range-thumb{
   position: relative;
   display: inline-block;
   transition: all 0.4s ease-in;
+}
+
+#thugShaker{
+  padding: 6px 16px; 
 }
 
 /* .button:hover {
