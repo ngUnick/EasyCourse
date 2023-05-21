@@ -263,6 +263,7 @@ input[type="range"]::-moz-range-thumb{
   grid-template-columns: repeat(3, 1fr);
   margin: 50px 0px 0px;
   width: 1150px;
+  grid-auto-rows: 1fr;
 }
 
 .box {
@@ -271,8 +272,8 @@ input[type="range"]::-moz-range-thumb{
   box-shadow: 0 0 10px var(--main-text-color);
   margin-bottom: 30px;
   margin-left: 70px;
-  width: fit-content;
-  height: fit-content;
+  height: 95%;
+  width: 95%;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
 }

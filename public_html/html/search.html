@@ -33,17 +33,6 @@
         height: 40px;
         z-index: 99999;
       }
-      .box-container{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-
-      }
-      .box{
-        margin-bottom: 10px;
-        height: 95%;
-        width: 95%;
-      }
       .pagin{
         cursor: pointer;
         color:blue;
@@ -170,10 +159,7 @@
           document.getElementById('dt_to').value = "2024-01-01"
 
           let Query = { query: new URLSearchParams(window.location.search).get('term') ,
-          priceRange : {
-              low :rangeInput[0].value,
-              high : rangeInput[1].value },
-          dateRange:{
+           dateRange:{
             from : document.getElementById('dt_from').value  ,
                to:document.getElementById('dt_to').value , 
           },
@@ -205,8 +191,6 @@
 
           const SearchInIndex = () =>
           {
-            if (Query.query === '')
-             return
             if(Query.priceRange === undefined || Query.priceRange === null)
              Query.priceRange = {low: 0 , high: 1000}
 
