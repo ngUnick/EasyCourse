@@ -62,22 +62,27 @@ Internal Medicine I  (ΝΟΣΟΛΟΓΙΑ Ι) // ΤΜΗΜΑ ΝΟΣΗΛΕΥΤΙΚ�
                     
                     <ul>
                         <li>
-                            <img class="item small1" style="order: 0;" src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="landscape photography picture">
+                            <img id="o1" class="item small1" style="order: 0;" src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+                            alt="11631">
                         </li>
                         <li>
-                            <img class="item big1" style="order: 1;" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="marketing picture">
-                        </li>
-
-                        <li>
-                            <img class="item focus" style="order: 2;" src="https://images.unsplash.com/photo-1579226905180-636b76d96082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="data analysis picture">
+                            <img id="o2" class="item big1" style="order: 1;" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+                            alt="ΕΙΣΑΓΩΓΗ ΣΤΟ ΜΑΡΚΕΤΙΝΓΚ">
                         </li>
 
                         <li>
-                            <img class="item big2" style="order: 3;" src="https://images.unsplash.com/photo-1578496479531-32e296d5c6e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="biomedical technologies picture">
+                            <img id="o3" class="item focus" style="order: 2;" src="https://images.unsplash.com/photo-1579226905180-636b76d96082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                             alt="Εισαγωγή στην Αναλυτική των Δεδομένων">
                         </li>
 
                         <li>
-                            <img class="item small2" style="order: 4;" src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="internal medicine picture">
+                            <img id="o4" class="item big2" style="order: 3;" src="https://images.unsplash.com/photo-1578496479531-32e296d5c6e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                             alt="Βιοϊατρική Τεχνολογία">
+                        </li>
+
+                        <li>
+                            <img id="o5" class="item small2" style="order: 4;" src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                             alt="ΝΟΣΟΛΟΓΙΑ Ι">
                         </li>
                     </ul>
 
@@ -101,6 +106,48 @@ Internal Medicine I  (ΝΟΣΟΛΟΓΙΑ Ι) // ΤΜΗΜΑ ΝΟΣΗΛΕΥΤΙΚ�
             </div>
             
         </div>
+
+        <script>
+
+            const Getcourse  = name =>
+            {
+                if(name != '11631'){
+                const Query = { query: name ,
+                      priceRange : {
+                          low :0,
+                          high : 100000000000 },
+                      dateRange:{
+                        from :"2010-01-01" ,
+                           to:"2029-01-01", 
+                      },
+                      offset : 0 ,
+                      numOfResults : 1}
+                $.ajax({
+                    url: `http://localhost:5176/search?query=${JSON.stringify(Query)}`,
+                    type:'GET',
+                    contentType:'application/json',
+                    dataType:'json',
+                    cache:false,
+                    headers:{
+                        'accept':'application/json',
+                        'Access-Control-Allow-Origin':'*',
+                        'Access-Control-Allow-Headers':'*'
+                    },
+                    success: data => window.location.href = `courses.html?course=${data.Data[0].moduleID}`,
+                    error: err => alert(err.errormesg)    });
+                }
+                else{
+                    window.location.href = `courses.html?course=${11631}`
+                }
+            }
+
+            for(let i =1 ; i < 6 ; ++i) {
+                document.getElementById(`o${i}`)
+                .addEventListener('click', e => Getcourse(e.target.alt) )
+
+            }
+
+        </script>
 
         <!---------------------- Home End ---------------------->
         
