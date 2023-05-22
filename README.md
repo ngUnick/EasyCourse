@@ -1,7 +1,7 @@
 # ADOPSE_2023_Omada2
 
 ## Project's URL
-https://adopse.thankarezos.com/
+https://easycourse.thankarezos.com/html/
 
 ## Functional requirements
 https://docs.google.com/spreadsheets/d/13xFasXgSEgq60FqIqWmjeOfcQlivvetx8qJRgwGzH1c/edit?usp=sharing
