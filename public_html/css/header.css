@@ -44,7 +44,7 @@ nav ul div.items{
 nav ul div.items a{
     text-decoration: none;
     font-size: 18px;
-    padding-right: 12px;
+    margin-right: 25px;
     transition: color 0.3s ease-in;
 }
 nav ul div.items a:hover{
@@ -94,15 +94,4 @@ nav ul .search-icon .icon:hover{
 
 nav ul .search-icon .icon i{
     font-size: 18px;
-}
-
-#google-login{
-    padding-left: 35px;
-}
-
-a img{
-    height: 18px;
-    position: absolute;
-    top: 33px;
-    right: 92px;
 }
