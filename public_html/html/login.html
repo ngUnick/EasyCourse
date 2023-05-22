@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="../css/styling.css">
   <link rel="stylesheet" href="../css/main.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="254797717307-q47cvnd55lhueu9apeia02ogdbkmqqon.apps.googleusercontent.com">
 
   <!-- Κώδικας για να μπαίνει το Header απευθείας σε κάθε HTML αρχείο -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -18,7 +20,14 @@
 </head>
 
 <body>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+    <script>
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),                
+          { locale: "fr" }
+        );
+        </script>
     <!-- Πάλι για να μπαίνει το Header -->
     <div id="header"></div>
 
@@ -41,8 +50,12 @@
                         <label for=""><input type="checkbox">remember me <br> <br> <a href="#">forgot password</a></label>
                       
                     </div>
-                    <button>log in</button>
-                    <div class="register">
+                    <div class="g-signin2" data-onsuccess="onSignIn"  data-type="standard"
+                    data-shape="pill"
+                    data-theme="filled_blue"
+                    data-text="signin"
+                    data-size="medium"
+                    data-logo_alignment="left" ></div>                     <div class="register">
                         <p>don't have a account? <br> <a href="#">register</a></p>
                     </div>
                 </form>
