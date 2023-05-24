@@ -1,0 +1,97 @@
+/*------------------ Navbar/Header ------------------*/
+
+nav{
+    padding: 10px 40px 10px 70px;
+    border: 1px solid var(--cyan);
+    box-shadow: 0px 10px 40px   #888888;
+    border-left: none;
+    border-right: none;
+    background-color: var(--main-background);
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+}
+
+nav ul li.logo a{
+    text-decoration: none;
+    text-transform: none;
+    color: var(--dark-cyan);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li.logo{
+    flex: 1;
+    margin: 10px 0px  15px -40px;
+}
+
+nav ul div.items{
+    padding: 0 25px;
+    display: inline-flex;
+    font-weight: 500;
+    margin-right: -40px;
+    text-transform: capitalize;
+}
+
+nav ul div.items a{
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 25px;
+    transition: color 0.3s ease-in;
+}
+nav ul div.items a:hover{
+    color: var(--cyan);
+    transition: color 0.3s ease-out;
+}
+
+nav ul .search-icon{
+    height: 40px;
+    width: 360px;
+    display: flex;
+}
+
+nav ul .search-icon input{
+    height: auto;
+    width: 300px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 50px 0 0 50px;
+    background-color: var(--search-bar-gray);
+}
+
+/* Κώδικας για να μην εμφανίζεται το "Χ" στο τέλος του search bar */
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+nav ul .search-icon .icon{
+    height: 100%;
+    width: 40px;
+    padding-right: 15px;
+    padding-left: 5px;
+    line-height: 40px;
+    text-align: center;
+    background: var(--search-bar-gray);
+    border-radius: 0 50px 50px 0;
+}
+
+nav ul .search-icon .icon:hover{
+    cursor: pointer;
+}
+
+nav ul .search-icon .icon i{
+    font-size: 18px;
+}

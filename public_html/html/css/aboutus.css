@@ -1,0 +1,65 @@
+/*-------------- about us , continue page1 ----------------*/
+
+.home-about {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: transparent;
+    padding-top: 180px;
+    padding-left: 100px;
+    padding-right: 180px;
+}
+
+.home-about .image{
+    padding: 100px;
+    max-width: 100%;
+}
+
+.home-about .image img{
+    width: 35vw;
+    border-radius: 20px ;
+    border: 1.5px solid var(--main-background);
+}
+
+.home-about .content h3{
+    text-align: center;
+    font-size: 40px;
+    color: var(--main-text-color);
+    margin-bottom: 2.5rem;
+}
+
+.home-about .content{
+    font-size: 1.2rem;
+    transition: 100%;
+    text-align: center;
+    padding: 0px 20px 20px;
+    line-height: 2.5rem;
+    color: var(--main-text-color);
+    border-radius: 30px;
+    margin-left: 30px;
+}
+
+.home-about .content p{
+    font-weight: 600;
+    text-align: justify;
+    text-transform: none;
+}
+
+@media(max-width: 1546px){
+    .home-about{
+        flex-direction: column;
+        padding-top: 60px;
+    }
+    
+    .image{
+        order: 2;
+        padding: 0% !important;
+        margin-top: 30px;
+    }
+
+    .content{
+        height: 450px !important;
+    }
+}
